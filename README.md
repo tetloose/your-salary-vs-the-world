@@ -1,4 +1,4 @@
-# UK Parliament - Product Team Home Exercise For Frontend Developers
+# Your Salary VS the World
 
 ## Recommended VSCode Extensions
 
@@ -14,18 +14,11 @@ See [Workspaces](https://marketplace.visualstudio.com/items?itemName=Fooxly.work
 
 ![alt text](https://assets.fooxly.com/extensions/workspace/example.gif)
 
-## ENV
-
-Duplicate `.env.example` to `.env`, update `PUBLIC_API=` with api url.
-
 ## Commands
 
-- `yarn setup` - Generate ENV, Install packages and start application.
-- `yarn start` - Runs the app in development mode.
-- `yarn build` - Builds the app for production.
-- `yarn test` - Jest.
-- `yarn test:coverage` - Jest coverage statistics.
-- `yarn test:watch` - Jest Watch mode
-- `yarn lint` - Lints JavaScript/TypeScript and SCSS files.
-- `yarn lint:fix` - Lints and automatically fixes errors in JavaScript/TypeScript and SCSS files.
-- `yarn git:commit` - Commits the working branch and prompts for a commit message.
+- `npm run setup` - Generate ENV, Install packages and start application.
+- `npm run start` - Runs the app in development mode.
+- `npm run build` - Builds the app for production.
+- `npm run lint` - Lints JavaScript/TypeScript and CSS files.
+- `npm run lint:fix` - Lints and automatically fixes errors in JavaScript/TypeScript and CSS files.
+- `npm run git:commit` - Commits the working branch and prompts for a commit message.
