@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./base/index.css";
+
+html {
+  background-color: hotpink !important;
+}

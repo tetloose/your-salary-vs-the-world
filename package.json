@@ -1,0 +1,64 @@
+{
+  "name": "you-vs-the-world",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "bash toolkit setup",
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "pre-commit": "yarn lint",
+    "git:commit": "bash toolkit git-commit"
+  },
+  "author": "James Tetley - Tetloose.com",
+  "license": "",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.24.0",
+    "@typescript-eslint/eslint-plugin": "^8.30.1",
+    "@typescript-eslint/parser": "^8.30.1",
+    "autoprefixer": "^10.4.22",
+    "copy-webpack-plugin": "^13.0.1",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "dotenv-webpack": "^8.1.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "eslint-webpack-plugin": "^5.0.1",
+    "handlebars": "^4.7.8",
+    "handlebars-loader": "^1.7.3",
+    "husky": "^9.1.7",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.1.1",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^3.4.18",
+    "terser-webpack-plugin": "^5.3.14",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.2",
+    "webpack": "5.99.5",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "prettier": {
+    "semi": false,
+    "useTabs": false,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ],
+  "dependencies": {
+    "html-webpack-plugin": "5.6.3"
+  }
+}

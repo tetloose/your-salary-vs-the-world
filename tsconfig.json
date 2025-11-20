@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "outDir": "./public/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "esnext",
+    "target": "es5",
+    "allowJs": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@utilities/*": [
+        "./src/utilities/*"
+      ],
+      "@config/*": [
+        "./src/config/*"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "src/types",
+    "src/**/*.ts",
+    "src/**/*.css"
+  ],
+  "exclude": [
+    ".husky",
+    ".scripts",
+    ".vscode",
+    "node_modules",
+    "public"
+  ]
+}
