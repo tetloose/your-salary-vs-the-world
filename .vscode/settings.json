@@ -4,7 +4,7 @@
   "emmet.includeLanguages": {
     "CSS": "CSS",
     "SCSS": "CSS",
-    "typescript": "typescript"
+    "javascript": "javascript"
   },
   "css.validate": false,
   "less.validate": false,
@@ -16,33 +16,40 @@
   },
   "eslint.validate": [
     "typescript",
-    "javasciprt"
+    "javascript"
   ],
   "stylelint.validate": [
     "css",
     "scss"
   ],
-  "files.exclude": {
-    ".husky": false,
-    ".scripts": false,
-    ".vscode": false,
-    ".editorconfig": false,
-    ".env.example": false,
-    ".gitignore": false,
-    ".nvmrc": false,
-    "eslint.config.mjs": false,
-    "postcss.config.mjs": false,
-    "package.json": false,
-    "toolkit": false,
-    "tsconfig.json": false,
-    "webpack.config.mjs": false,
-    "yarn.lock": false,
-    "node_modules": false
-  },
   "search.exclude": {
     "node_modules": true,
     "public": true
   },
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "javascript.preferences.importModuleSpecifier": "non-relative"
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "prettier.enable": false,
+  "files.exclude": {
+    ".husky": true,
+    ".scripts": true,
+    ".vscode": true,
+    "node_modules": true,
+    "public": true,
+    ".editorconfig": true,
+    ".gitignore": true,
+    ".nvmrc": true,
+    "eslint.config.mjs": true,
+    "package-lock.json": true,
+    "package.json": true,
+    "postcss.config.mjs": true,
+    "stylelint.config.mjs": true,
+    "tailwind.config.js": true,
+    "toolkit": true,
+    "tsconfig.json": true,
+    "webpack.config.mjs": true
+  }
 }

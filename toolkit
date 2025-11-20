@@ -6,7 +6,4 @@
 
 if [ "$1" = "git-commit" ]; then
   eval "bash .scripts/$1"
-
-elif [ "$1" = "setup" ]; then
-  eval "bash .scripts/$1"
 fi

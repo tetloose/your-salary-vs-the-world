@@ -1,13 +1,14 @@
 import autoprefixer from 'autoprefixer'
-import tailwindcss from 'tailwindcss'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
-import Dotenv from 'dotenv-webpack'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import StylelintPlugin from 'stylelint-webpack-plugin'
+import tailwindcss from 'tailwindcss'
 import TerserPlugin from 'terser-webpack-plugin'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -78,7 +79,8 @@ export default (_, argv) => {
         '@styles': path.resolve(__dirname, 'src/styles'),
         '@components': path.resolve(__dirname, 'src/components'),
         '@utilities': path.resolve(__dirname, 'src/utilities'),
-        '@config': path.resolve(__dirname, 'src/config')
+        '@config': path.resolve(__dirname, 'src/config'),
+        '@legacy': path.resolve(__dirname, 'src/legacy')
       }
     },
     devServer: {
@@ -97,7 +99,6 @@ export default (_, argv) => {
       clean: true
     },
     plugins: [
-      new Dotenv(),
       new HtmlWebpackPlugin({
         template: './src/templates/index.hbs',
         filename: 'index.html',
@@ -113,6 +114,14 @@ export default (_, argv) => {
         files: 'src/**/*.{ts,js}',
         emitWarning: true,
         failOnError: false
+      }),
+      new StylelintPlugin({
+        files: 'src/**/*.css',
+        failOnError: false,
+        emitErrors: true,
+        emitWarning: true,
+        lintDirtyModulesOnly: false,
+        configFile: path.resolve(__dirname, 'stylelint.config.mjs')
       }),
       new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash].css',
@@ -135,7 +144,36 @@ export default (_, argv) => {
     ],
     optimization: {
       minimize: !mode,
-      minimizer: [new CssMinimizerPlugin(), new TerserPlugin()]
+      minimizer: [
+        new CssMinimizerPlugin(),
+        new TerserPlugin(),
+        new ImageMinimizerPlugin({
+          minimizer: {
+            implementation: ImageMinimizerPlugin.imageminMinify,
+            options: {
+              plugins: [
+                ['mozjpeg', { quality: 80 }],
+                [
+                  'svgo',
+                  {
+                    plugins: [
+                      {
+                        name: 'preset-default',
+                        params: {
+                          overrides: {
+                            removeViewBox: false,
+                            cleanupIds: false
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          }
+        })
+      ]
     }
   }
 }

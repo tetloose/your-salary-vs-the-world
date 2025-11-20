@@ -25,6 +25,9 @@
       ],
       "@config/*": [
         "./src/config/*"
+      ],
+      "@legacy/*": [
+        "./src/legacy/*"
       ]
     }
   },
