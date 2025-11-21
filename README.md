@@ -12,6 +12,8 @@ A salary comparison calculator built with TypeScript, Handlebars, and Tailwind C
 - **ESLint** - JavaScript/TypeScript linting
 - **Stylelint** - CSS linting with alphabetical property ordering
 - **Prettier** - Code formatting
+- **Husky** - Git hooks for pre-commit automation
+- **lint-staged** - Run linters on staged files only
 
 ## Getting Started
 
@@ -57,7 +59,6 @@ Builds the app for production to the `public` folder. It bundles the application
 - `npm run lint:css:fix` - Lint and fix CSS files only
 - `npm run lint:html` - Lint Handlebars component templates only
 - `npm run lint:html:fix` - Lint and fix Handlebars component templates only
-- `npm run pre-commit` - Fix all files, then lint (used in pre-commit hook)
 - `npm run git:commit` - Interactive git commit helper
 
 ## Project Structure
@@ -109,6 +110,19 @@ Configured for Handlebars component templates:
 - 120 character line width
 - Auto-fix on save in VS Code
 - Main template files (with partials) are excluded from formatting
+
+### Git Hooks
+
+Pre-commit hooks are managed by **Husky** and **lint-staged**:
+- Automatically runs on `git commit`
+- Only lints staged files (faster than linting entire project)
+- Auto-fixes issues when possible
+- Blocks commit if unfixable errors remain
+
+**What runs on commit:**
+- JavaScript/TypeScript: `eslint --fix` then `eslint`
+- CSS: `stylelint --fix` then `stylelint`
+- Handlebars components: `prettier --write` then `prettier --check`
 
 ## VSCode Setup
 
