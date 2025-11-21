@@ -49,10 +49,15 @@ Builds the app for production to the `public` folder. It bundles the application
 - `npm run setup` - Install packages
 - `npm run start` - Start development server with hot reload
 - `npm run build` - Build for production
-- `npm run lint` - Lint JavaScript/TypeScript and CSS files
-- `npm run lint:fix` - Lint and automatically fix errors
+- `npm run lint` - Lint all files (JavaScript/TypeScript, CSS, and Handlebars)
+- `npm run lint:fix` - Lint and automatically fix all files
+- `npm run lint:js` - Lint JavaScript/TypeScript files only
+- `npm run lint:js:fix` - Lint and fix JavaScript/TypeScript files only
 - `npm run lint:css` - Lint CSS files only
 - `npm run lint:css:fix` - Lint and fix CSS files only
+- `npm run lint:html` - Lint Handlebars component templates only
+- `npm run lint:html:fix` - Lint and fix Handlebars component templates only
+- `npm run pre-commit` - Fix all files, then lint (used in pre-commit hook)
 - `npm run git:commit` - Interactive git commit helper
 
 ## Project Structure
@@ -84,6 +89,10 @@ The following path aliases are configured in `tsconfig.json` and `webpack.config
 
 Configured with TypeScript support, Prettier integration, and auto-fix on save in VS Code.
 
+- Validates JavaScript and TypeScript code
+- Enforces code style and best practices
+- Auto-fixes issues on save
+
 ### Stylelint
 
 Configured with:
@@ -91,6 +100,15 @@ Configured with:
 - Tailwind CSS support
 - Stylistic rules for consistency
 - Auto-fix on save in VS Code
+
+### Prettier
+
+Configured for Handlebars component templates:
+- Auto-formats `.hbs` files in `src/components/`
+- Double quotes for HTML attributes
+- 120 character line width
+- Auto-fix on save in VS Code
+- Main template files (with partials) are excluded from formatting
 
 ## VSCode Setup
 

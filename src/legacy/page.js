@@ -528,8 +528,6 @@ $(function () {
     $('.Navigation_c-nav-trigger_RtFMy').toggleClass('Navigation_is-open_2oLxG')
   })
 
-  SocialShareKit.init()
-
   $(document).ready(function () {
     $('#currency-select').select2({
       templateResult: formatOption,
@@ -726,8 +724,6 @@ $(function () {
     $('table td').removeClass('highlighted')
   })
 
-  new ScrollHint('.js-scrollable')
-
   $('.small.search').on('click', function (e) {
     e.preventDefault()
 
@@ -777,6 +773,23 @@ $(function () {
 
   function hideTooltip(event) {
     event.target.removeAttribute('title')
+  }
+
+  // Initialize CDN libraries when available
+  function initCDNLibraries() {
+    if (typeof SocialShareKit !== 'undefined') {
+      SocialShareKit.init()
+    }
+    if (typeof ScrollHint !== 'undefined') {
+      new ScrollHint('.js-scrollable')
+    }
+  }
+
+  // Wait for all deferred scripts to load
+  if (document.readyState === 'complete') {
+    initCDNLibraries()
+  } else {
+    window.addEventListener('load', initCDNLibraries)
   }
 })
 

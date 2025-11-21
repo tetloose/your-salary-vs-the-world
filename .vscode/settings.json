@@ -32,7 +32,10 @@
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "prettier.enable": false,
+  "[handlebars]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.enable": true,
   "files.exclude": {
     ".husky": true,
     ".scripts": true,

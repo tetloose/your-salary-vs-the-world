@@ -95,7 +95,7 @@ export default (_, argv) => {
     },
     output: {
       path: path.resolve(__dirname, 'public'),
-      filename: 'js/[name].[contenthash].js',
+      filename: mode ? 'js/[name].js' : 'js/[name].[contenthash].js',
       clean: true
     },
     plugins: [
@@ -124,8 +124,8 @@ export default (_, argv) => {
         configFile: path.resolve(__dirname, 'stylelint.config.mjs')
       }),
       new MiniCssExtractPlugin({
-        filename: 'css/[name].[contenthash].css',
-        chunkFilename: 'css/[name].[contenthash].css'
+        filename: mode ? 'css/[name].css' : 'css/[name].[contenthash].css',
+        chunkFilename: mode ? 'css/[name].css' : 'css/[name].[contenthash].css'
       }),
       new CopyWebpackPlugin({
         patterns: [
