@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "setup": "npm install",
+    "prepare": "husky",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",

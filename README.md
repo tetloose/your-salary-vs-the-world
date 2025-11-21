@@ -28,7 +28,7 @@ A salary comparison calculator built with TypeScript, Handlebars, and Tailwind C
 npm run setup
 ```
 
-This command installs all dependencies.
+This command installs all dependencies. The `prepare` script will automatically run after installation to set up Husky git hooks.
 
 ### Development
 
@@ -48,7 +48,7 @@ Builds the app for production to the `public` folder. It bundles the application
 
 ## Available Scripts
 
-- `npm run setup` - Install packages
+- `npm run setup` - Install packages and set up git hooks
 - `npm run start` - Start development server with hot reload
 - `npm run build` - Build for production
 - `npm run lint` - Lint all files (JavaScript/TypeScript, CSS, and Handlebars)
@@ -60,6 +60,8 @@ Builds the app for production to the `public` folder. It bundles the application
 - `npm run lint:html` - Lint Handlebars component templates only
 - `npm run lint:html:fix` - Lint and fix Handlebars component templates only
 - `npm run git:commit` - Interactive git commit helper
+
+**Note:** The `prepare` script runs automatically after `npm install` to initialize Husky git hooks.
 
 ## Project Structure
 
