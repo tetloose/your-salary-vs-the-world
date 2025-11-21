@@ -7,8 +7,6 @@ import { loadComponent } from '@utilities/load-component.utilities'
 import { observer } from '@utilities/observer.utilities'
 import '@styles/app.css'
 
-console.log('hi')
-
 components?.forEach((component) => {
   const { dataset } = component
   const { module, preload } = dataset
