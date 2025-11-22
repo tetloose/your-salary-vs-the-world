@@ -5,6 +5,7 @@
     "stylelint.vscode-stylelint",
     "esbenp.prettier-vscode",
     "Fooxly.workspace",
-    "andrejunges.Handlebars"
+    "andrejunges.Handlebars",
+    "bradlc.vscode-tailwindcss"
   ]
 }

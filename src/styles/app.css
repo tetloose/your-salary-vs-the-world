@@ -1,5 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import './settings/index.css';
+@import './utils/index.css';
 
-@import url('./base/index.css');
+html {
+  background-color: #67d567;
+}

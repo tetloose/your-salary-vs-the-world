@@ -4,7 +4,8 @@
   "emmet.includeLanguages": {
     "CSS": "CSS",
     "SCSS": "CSS",
-    "javascript": "javascript"
+    "javascript": "javascript",
+    "handlebars": "html"
   },
   "css.validate": false,
   "less.validate": false,
@@ -36,6 +37,15 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "prettier.enable": true,
+  "tailwindCSS.includeLanguages": {
+    "handlebars": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "class[:]\\s*['\"`]([^'\"`]*)['\"`]",
+      "([^\\s]+)"
+    ]
+  ],
   "files.exclude": {
     ".husky": true,
     ".scripts": true,
@@ -53,6 +63,7 @@
     "tailwind.config.js": true,
     "toolkit": true,
     "tsconfig.json": true,
-    "webpack.config.mjs": true
+    "webpack.config.mjs": true,
+    "tailwind.config.ts": true
   }
 }

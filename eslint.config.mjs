@@ -23,9 +23,7 @@ const ignoreConfig = {
     '**/.scripts/**',
     '**/.vscode/**',
     '**/node_modules/**',
-    '**/public/**',
-    '**/src/assets/js/**',
-    '!**/src/assets/js/page.js'
+    '**/public/**'
   ]
 }
 
@@ -73,6 +71,7 @@ const mainConfig = {
             '^\\./?$',
             '^.*\\.types$',
             '^@?\\w\\.types$',
+            '^data$',
             '^.+\\.(svg|png|jpe?g|gif|webp|avif|ico|bmp|tiff?)$',
             '^.+\\.s?css$'
           ]

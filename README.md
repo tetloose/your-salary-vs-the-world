@@ -59,6 +59,7 @@ Builds the app for production to the `public` folder. It bundles the application
 - `npm run lint:css:fix` - Lint and fix CSS files only
 - `npm run lint:html` - Lint Handlebars component templates only
 - `npm run lint:html:fix` - Lint and fix Handlebars component templates only
+- `npm run gen:component` - Generate a new component with boilerplate files
 - `npm run git:commit` - Interactive git commit helper
 
 **Note:** The `prepare` script runs automatically after `npm install` to initialize Husky git hooks.

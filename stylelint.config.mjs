@@ -6,9 +6,24 @@ const stylelintConfig = {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: ['tailwind', 'apply', 'layer', 'config', 'variants', 'responsive', 'screen']
+        ignoreAtRules: [
+          'tailwind',
+          'apply',
+          'layer',
+          'config',
+          'variants',
+          'responsive',
+          'screen',
+          'theme',
+          'custom',
+          'utility',
+          'variant',
+          'custom-variant',
+          'source'
+        ]
       }
     ],
+    'import-notation': null,
     'no-invalid-position-at-import-rule': null,
     'property-no-unknown': null,
     'selector-class-pattern': null,
@@ -73,8 +88,7 @@ const stylelintConfig = {
     '.vscode/**',
     'node_modules/**',
     'public/**',
-    'coverage/**',
-    'src/legacy/**'
+    'coverage/**'
   ]
 }
 

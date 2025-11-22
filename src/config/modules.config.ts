@@ -1,6 +1,10 @@
 export const modules = {
-  // MemberCard: () =>
-  //   import(
-  //     /* webpackChunkName: 'member-card' */ '@components/member-card/member-card.component'
-  //   )
+  Head: () =>
+    import(/* webpackChunkName: 'head' */ '@components/Head/Head.component'),
+  Footer: () =>
+    import(
+      /* webpackChunkName: 'footer' */ '@components/Footer/Footer.component'
+    ),
+  Hero: () =>
+    import(/* webpackChunkName: 'hero' */ '@components/Hero/Hero.component')
 }

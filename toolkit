@@ -6,4 +6,7 @@
 
 if [ "$1" = "git-commit" ]; then
   eval "bash .scripts/$1"
+
+elif [ "$1" = "generate-component" ]; then
+  eval "bash .scripts/$1"
 fi

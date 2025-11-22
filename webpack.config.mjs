@@ -1,5 +1,3 @@
-import autoprefixer from 'autoprefixer'
-import CopyWebpackPlugin from 'copy-webpack-plugin'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
@@ -8,7 +6,6 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import StylelintPlugin from 'stylelint-webpack-plugin'
-import tailwindcss from 'tailwindcss'
 import TerserPlugin from 'terser-webpack-plugin'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -42,15 +39,13 @@ export default (_, argv) => {
             {
               loader: 'css-loader',
               options: {
-                sourceMap: mode
+                sourceMap: mode,
+                importLoaders: 1
               }
             },
             {
               loader: 'postcss-loader',
               options: {
-                postcssOptions: {
-                  plugins: [tailwindcss, autoprefixer]
-                },
                 sourceMap: mode
               }
             }
@@ -79,8 +74,7 @@ export default (_, argv) => {
         '@styles': path.resolve(__dirname, 'src/styles'),
         '@components': path.resolve(__dirname, 'src/components'),
         '@utilities': path.resolve(__dirname, 'src/utilities'),
-        '@config': path.resolve(__dirname, 'src/config'),
-        '@legacy': path.resolve(__dirname, 'src/legacy')
+        '@config': path.resolve(__dirname, 'src/config')
       }
     },
     devServer: {
@@ -102,16 +96,16 @@ export default (_, argv) => {
       new HtmlWebpackPlugin({
         template: './src/templates/index.hbs',
         filename: 'index.html',
-        title: 'Your Salary Vs The World | Remitly',
+        title: 'The Immigration Index | Remitly',
         author: 'Remitly',
         description:
-          'Using an interactive tool, this analysis breaks down how many hours you would need to work to earn your current salary in different countries around the world.',
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         url: 'https://media.remitly.io/salary-comparison-calculator/',
         canonical: 'https://www.remitly.com/gb/en/salary-comparison-calculator'
       }),
       new ESLintPlugin({
-        extensions: ['ts', 'js'],
-        files: 'src/**/*.{ts,js}',
+        extensions: ['ts'],
+        files: 'src/**/*.ts',
         emitWarning: true,
         failOnError: false
       }),
@@ -126,20 +120,6 @@ export default (_, argv) => {
       new MiniCssExtractPlugin({
         filename: mode ? 'css/[name].css' : 'css/[name].[contenthash].css',
         chunkFilename: mode ? 'css/[name].css' : 'css/[name].[contenthash].css'
-      }),
-      new CopyWebpackPlugin({
-        patterns: [
-          {
-            from: 'src/assets/images',
-            to: 'images',
-            noErrorOnMissing: true
-          },
-          {
-            from: 'src/assets/js',
-            to: 'js',
-            noErrorOnMissing: true
-          }
-        ]
       })
     ],
     optimization: {

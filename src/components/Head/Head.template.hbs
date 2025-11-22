@@ -1,0 +1,25 @@
+<head data-module="Head">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>
+    {{htmlWebpackPlugin.options.title}}
+  </title>
+  <meta name="description" content="{{htmlWebpackPlugin.options.description}}" />
+  <meta name="author" content="{{htmlWebpackPlugin.options.author}}" />
+  <meta property="og:title" content="{{htmlWebpackPlugin.options.title}}" />
+  <meta property="og:description" content="{{htmlWebpackPlugin.options.description}}" />
+  {{#if social}}
+    <meta property="og:image" content="{{social}}" />
+    <meta name="twitter:image" content="{{social}}" />
+  {{/if}}
+  <meta property="og:url" content="{{htmlWebpackPlugin.options.url}}" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{htmlWebpackPlugin.options.title}}" />
+  <meta name="twitter:description" content="{{htmlWebpackPlugin.options.description}}" />
+  <link rel="canonical" href="{{htmlWebpackPlugin.options.canonical}}" hreflang="en" />
+  {{#if favicon}}
+    <link rel="icon" type="image/png" href="{{favicon}}" sizes="192x192" />
+    <link rel="apple-touch-icon" href="{{favicon}}" />
+  {{/if}}
+</head>
