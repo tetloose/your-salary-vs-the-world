@@ -1,10 +1,6 @@
 @use '@styles/settings' as *;
 
 .hero {
-  @include mq(breakpoint(med)) {
-    border-bottom: 1px solid rgba($dark, .1);
-  }
-
   &__content {
     @include mq(breakpoint(med), max-width) {
       @include sizing('padding-top', size(8));

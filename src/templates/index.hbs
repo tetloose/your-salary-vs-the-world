@@ -27,8 +27,25 @@
       image='../components/Hero/images/hero.jpg'
       imageAlt='Image'
     }}
-    <div class="l-row med-direction-row-reverse u-spacing-b-med">
-      <div class="l-row__col med-width-9">
+    <div class="l-row med-direction-row-reverse">
+      <div class="l-row__col med-width-9 u-spacing-t-med">
+        {{> Chapter/Chapter.template
+          id='key'
+          containerModifiers='mob-flush-container u-bg-body u-spacing-t-med u-spacing-b-med'
+          rowModifiers='has-padding'
+          contentModifiers='u-text-light u-link-light'
+          title='<h2>Key Findings</h2>'
+          content='
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto modi adipisci ducimus sint, consectetur esse iste earum quibusdam debitis qui perferendis placeat voluptatibus quo, animi obcaecati, at mollitia saepe beatae?</p>
+            <ul>
+              <li><strong>lorem</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita dolore.</li>
+              <li><strong>lorem</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita dolore.</li>
+              <li><strong>lorem</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita dolore.</li>
+              <li><strong>lorem</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita dolore.</li>
+              <li><strong>lorem</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita dolore.</li>
+            </ul>
+          '
+        }}
         {{> Content/Content.template
           containerModifiers='u-bg-light u-spacing-t-med'
           rowModifiers=''
@@ -37,6 +54,14 @@
             <h3><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, dolorem assumenda at aut harum unde quod, amet corporis iusto cum, natus sint molestias quas velit eum doloremque non quidem odit.<sup>[1]</sup></strong></h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima praesentium sint aliquam, <a href="https://www.remitly.com/us/en" target="_blank" rel="noreferrer">link</a> ipsum a temporibus! Dicta, minus non aliquid neque laborum omnis, nulla, accusantium commodi pariatur modi iusto sapiente qui!</p>
           '
+        }}
+        {{> Table/Table.template
+          containerModifiers='u-bg-light u-spacing-t-med u-spacing-b-med'
+          rowModifiers=''
+          titleModifiers='u-text-heading'
+          title='<h2>Table Title</h2>'
+          contentModifiers='u-text-body'
+          content='<p>Table description goes here.</p>'
         }}
         {{> Score-card/Score-card.template
           containerModifiers='u-spacing-t-med'
@@ -139,8 +164,21 @@
           imageCol='5'
           contentCol='7'
         }}
+        {{> Quote/Quote.template
+          containerModifiers='u-bg-light u-spacing-t-lrg'
+          rowModifiers='align-center'
+          image='../components/Quote/images/quote.jpg'
+          imageAlt='John Doe'
+          imageModifiers='u-radius-round is-cover u-ratio-1x1'
+          quoteModifiers='u-h4 u-text-body'
+          quote='Lorem ipsum dolor sit amet consectetur adipisicing elit. Error alias dignissimos eveniet maxime, fugit deleniti delectus nemo voluptatibus.'
+          authorModifiers='u-bold u-text-body'
+          author='John Doe'
+          titleModifiers='u-small u-text-body'
+          title='Lorem ipsum dolor sit'
+        }}
         {{> Content-image/Content-image.template
-          containerModifiers='u-spacing-t-med'
+          containerModifiers='u-spacing-t-med u-spacing-b-med'
           rowModifiers='align-center direction-row-reverse'
           contentModifiers='u-text-body u-link-blue-dark'
           imageModifiers='is-contain u-radius-sml'
@@ -159,20 +197,58 @@
           shareTitle='Share this article'
           tocTitle='Table of contents'
           tocLinks=(array
+            (hash id='key' href='#key' text='Key findings')
             (hash id='chapter-1' href='#chapter-1' text='Chapter 1')
             (hash id='chapter-2' href='#chapter-2' text='Chapter 2')
-            (hash id='chapter-3' href='#chapter-3' text='Chapter 3')
-            (hash id='chapter-4' href='#chapter-4' text='Chapter 4')
+            (hash id='faq' href='#faq' text='FAQs')
           )
         }}
       </div>
     </div>
+    {{> Faq/Faq.template
+      id='faq'
+      containerModifiers='u-spacing-t-lrg u-spacing-b-xlrg'
+      rowModifiers=''
+      titleModifiers='u-h2 u-bold u-text-body'
+      title='<h2>Frequently Asked Questions</h2>'
+      content='<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius asperiores aperiam porro odio id amet, consequuntur dignissimos, neque blanditiis quis, consectetur minus. Totam tempora aperiam, eius vitae aspernatur quod?</p>'
+      items=(array
+        (hash
+          itemModifiers='is-dark'
+          triggerModifiers='u-h5 u-bold u-text-body'
+          contentModifiers='u-text-body u-link-blue-dark'
+          question='Lorem ipsum, dolor sit amet?'
+          answer='<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati asperiores mollitia amet illum quos, dolorem praesentium natus ab facere corporis porro! Similique facilis nostrum adipisci earum repellat veritatis, a obcaecati!</p>'
+        )
+        (hash
+          itemModifiers='is-dark'
+          triggerModifiers='u-h5 u-bold u-text-body'
+          contentModifiers='u-text-body u-link-blue-dark'
+          question='Lorem ipsum, dolor sit amet?'
+          answer='<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati asperiores mollitia amet illum quos, dolorem praesentium natus ab facere corporis porro! Similique facilis nostrum adipisci earum repellat veritatis, a obcaecati!</p>'
+        )
+        (hash
+          itemModifiers='is-dark'
+          triggerModifiers='u-h5 u-bold u-text-body'
+          contentModifiers='u-text-body u-link-blue-dark'
+          question='Lorem ipsum, dolor sit amet?'
+          answer='<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati asperiores mollitia amet illum quos, dolorem praesentium natus ab facere corporis porro! Similique facilis nostrum adipisci earum repellat veritatis, a obcaecati!</p>'
+        )
+        (hash
+          itemModifiers='is-dark'
+          triggerModifiers='u-h5 u-bold u-text-body'
+          contentModifiers='u-text-body u-link-blue-dark'
+          question='Lorem ipsum, dolor sit amet?'
+          answer='<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati asperiores mollitia amet illum quos, dolorem praesentium natus ab facere corporis porro! Similique facilis nostrum adipisci earum repellat veritatis, a obcaecati!</p>'
+        )
+      )
+    }}
     {{> Blog/Blog.template
-      containerModifiers='u-bg-cream u-spacing-t-lrg u-spacing-b-lrg'
-      contentModifiers='u-text-body u-link-blue-dark'
+      containerModifiers='u-bg-body u-spacing-t-lrg u-spacing-b-lrg'
+      contentModifiers='u-text-light u-link-light'
       content='
-        <h2><strong>Top stories from Reimagine</strong></h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae veritatis ipsum tempora consectetur dolore deleniti laudantium quibusdam suscipit.</p>
+        <h2><strong>Lorem ipsum, dolor sit amet consectetur</strong></h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit recusandae veritatis ipsum.</p>
       '
       posts=(array
         (hash
@@ -219,6 +295,18 @@
       btnText='View all articles'
       btnLink='/blog'
       btnColor='blue-dark'
+    }}
+    {{> Contact/Contact.template
+      containerModifiers='u-bg-cream u-spacing-t-med u-spacing-b-med'
+      rowModifiers='align-center'
+      iconModifiers='u-icon-mail is-xxxlrg is-blue-dark'
+      titleModifiers='u-h5 u-bold u-text-body'
+      title='<h5>Questions about the data?</h5>'
+      subtitleModifiers='u-small u-text-body'
+      subtitle='<p>Send us an email</p>'
+      btnText='Get in touch'
+      btnLink='mailto:press@remitly.com'
+      btnModifiers='u-btn-blue-dark'
     }}
     {{> Content/Content.template
       containerModifiers='u-bg-light u-spacing-t-sml u-spacing-b-sml'

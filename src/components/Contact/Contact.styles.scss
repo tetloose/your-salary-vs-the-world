@@ -1,0 +1,36 @@
+@use '@styles/settings' as *;
+
+.contact {
+  &__row {
+    @include mq(breakpoint(med)) {
+      justify-content: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: size(3);
+  }
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__button {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include mq(breakpoint(med), max-width) {
+      justify-content: flex-start;
+
+      @include sizing('margin-top', size(4));
+    }
+  }
+}

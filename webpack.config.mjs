@@ -146,7 +146,16 @@ export default (_, argv) => {
     optimization: {
       minimize: !mode,
       minimizer: [
-        new CssMinimizerPlugin(),
+        new CssMinimizerPlugin({
+          minimizerOptions: {
+            preset: [
+              'default',
+              {
+                calc: false
+              }
+            ]
+          }
+        }),
         new TerserPlugin(),
         new ImageMinimizerPlugin({
           minimizer: {

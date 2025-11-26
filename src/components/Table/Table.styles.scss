@@ -1,0 +1,148 @@
+/* stylelint-disable selector-class-pattern */
+@use '@styles/settings' as *;
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background-color: $blue-dark;
+
+    tr {
+      th {
+        border-bottom: 2px solid $blue-dark;
+        color: $light;
+        font-weight: bold;
+        text-align: left;
+
+        @include sizing('padding', [size(4), size(3)]);
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid rgba($dark, .1);
+
+      @include transition('background-color');
+
+      &:hover {
+        background-color: rgba($blue-light, .1);
+      }
+
+      td {
+        @include sizing('padding', [size(4), size(3)]);
+      }
+    }
+  }
+
+  .dt-center {
+    text-align: center;
+  }
+
+  .dt-left {
+    text-align: left;
+  }
+
+  .dt-right {
+    text-align: right;
+  }
+}
+
+.dataTables_wrapper {
+  .dataTables_length,
+  .dataTables_filter {
+    @include sizing('margin-bottom', size(4));
+  }
+
+  .dataTables_length {
+    float: left;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: size(2);
+
+      select {
+        @include sizing('padding', [size(2), size(3)]);
+
+        border: 1px solid rgba($dark, .2);
+        border-radius: radius(sml);
+      }
+    }
+  }
+
+  .dataTables_filter {
+    float: right;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: size(2);
+
+      input {
+        @include sizing('padding', [size(2), size(3)]);
+
+        border: 1px solid rgba($dark, .2);
+        border-radius: radius(sml);
+      }
+    }
+  }
+
+  .dataTables_info {
+    float: left;
+
+    @include sizing('padding-top', size(4));
+  }
+
+  .dataTables_paginate {
+    float: right;
+
+    @include sizing('padding-top', size(4));
+
+    .paginate_button {
+      display: inline-block;
+      border: 1px solid rgba($dark, .2);
+      border-radius: radius(sml);
+      text-decoration: none;
+      cursor: pointer;
+
+      @include sizing('padding', [size(2), size(3)]);
+      @include sizing('margin-left', size(1));
+      @include transition('background-color, border-color');
+
+      &:hover {
+        background-color: $blue-light;
+        border-color: $blue-light;
+        color: $light;
+      }
+
+      &.current {
+        background-color: $blue-dark;
+        border-color: $blue-dark;
+        color: $light;
+      }
+
+      &.disabled {
+        opacity: .5;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: transparent;
+          border-color: rgba($dark, .2);
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

@@ -1,0 +1,33 @@
+<section id={{id}} data-module="Faq" style="opacity: 0" class="faq u-load-hide {{containerModifiers}}">
+  <div class="l-row {{rowModifiers}}">
+    <div class="l-row__col">
+      {{#if title}}
+        <div class="{{titleModifiers}}">
+          {{{title}}}
+        </div>
+        {{#if content}}
+          <div class="u-p u-spacing-t-sml">
+            {{{content}}}
+          </div>
+        {{/if}}
+      {{/if}}
+      {{#if items}}
+        <div class="faq__wrapper u-spacing-t-med">
+          {{#each items}}
+            <div class="faq__item js-faqItem {{itemModifiers}}">
+              <button class="faq__trigger js-faqItemTrigger {{triggerModifiers}}" type="button">
+                {{question}}
+                <i class="faq__icon u-icon-chevron-down is-xxlrg js-faqItemTrigger"></i>
+              </button>
+              <div class="faq__content u-content {{contentModifiers}} js-faqItemContent">
+                <div class="faq__answer">
+                  {{{answer}}}
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</section>

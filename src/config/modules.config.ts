@@ -30,5 +30,15 @@ export const modules = {
       /* webpackChunkName: 'content-image' */ '@components/Content-image/Content-image.component'
     ),
   Blog: () =>
-    import(/* webpackChunkName: 'blog' */ '@components/Blog/Blog.component')
+    import(/* webpackChunkName: 'blog' */ '@components/Blog/Blog.component'),
+  Faq: () =>
+    import(/* webpackChunkName: 'faq' */ '@components/Faq/Faq.component'),
+  Contact: () =>
+    import(
+      /* webpackChunkName: 'contact' */ '@components/Contact/Contact.component'
+    ),
+  Quote: () =>
+    import(/* webpackChunkName: 'quote' */ '@components/Quote/Quote.component'),
+  Table: () =>
+    import(/* webpackChunkName: 'table' */ '@components/Table/Table.component')
 }

@@ -1,0 +1,106 @@
+@use '@styles/settings' as *;
+
+.faq {
+  $faq: &;
+
+  &__item {
+    &.is-dark {
+      border-bottom: 1px solid rgba($dark, .1);
+
+      &:first-child {
+        border-top: 1px solid rgba($dark, .1);
+      }
+
+      #{$faq}__trigger {
+        &:focus {
+          background-color: rgba($dark, .03);
+        }
+
+        @include mq-hover {
+          &:hover,
+          &:active {
+            background-color: rgba($dark, .03);
+          }
+        }
+      }
+    }
+
+    &.is-light {
+      border-bottom: 1px solid rgba($light, .1);
+
+      &:first-child {
+        border-top: 1px solid rgba($light, .1);
+      }
+
+      #{$faq}__trigger {
+        &:focus {
+          background-color: rgba($light, .05);
+        }
+
+        @include mq-hover {
+          &:hover,
+          &:active {
+            background-color: rgba($light, .05);
+          }
+        }
+      }
+    }
+
+    &.is-visible {
+      #{$faq}__icon {
+        transform: rotate(180deg);
+      }
+
+      #{$faq}__content {
+        display: block;
+        height: auto;
+      }
+
+      &.is-dark #{$faq}__trigger {
+        background-color: rgba($dark, .02);
+      }
+
+      &.is-light #{$faq}__trigger {
+        background-color: rgba($light, .05);
+      }
+    }
+  }
+
+  &__trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    appearance: none;
+
+    @include sizing('padding', size(6));
+    @include transition('background-color');
+  }
+
+  &__icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    @include sizing('width', 30px);
+    @include sizing('height', 30px);
+    @include transition('transform');
+  }
+
+  &__content {
+    height: 0;
+    overflow: hidden;
+
+    @include transition('height');
+  }
+
+  &__answer {
+    @include disable(true);
+    @include sizing('padding', [size(0), size(6), size(6), size(6)]);
+  }
+}

@@ -1,0 +1,30 @@
+<section data-module="Quote" style="opacity: 0" class="quote u-load-hide {{containerModifiers}}">
+  <div class="l-row {{rowModifiers}}">
+    <div class="l-row__col med-width-3">
+      {{#if image}}
+        <figure class="u-figure {{imageModifiers}}">
+          <img class="u-figure__img" src="{{image}}" alt="{{imageAlt}}" loading="lazy" />
+        </figure>
+      {{/if}}
+    </div>
+    <div class="l-row__col med-width-9">
+      <div class="quote__content">
+        {{#if quote}}
+          <blockquote class="u-blockquote {{quoteModifiers}}">
+            {{{quote}}}
+          </blockquote>
+        {{/if}}
+        {{#if author}}
+          <cite class="{{authorModifiers}} u-spacing-t-xsml">
+            {{author}}
+          </cite>
+        {{/if}}
+        {{#if title}}
+          <div class="{{titleModifiers}}">
+            {{title}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</section>

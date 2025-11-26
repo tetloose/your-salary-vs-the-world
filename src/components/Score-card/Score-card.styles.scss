@@ -10,7 +10,7 @@
     justify-content: center;
     overflow: hidden;
     background-clip: padding-box;
-    border: 1px solid rgba($dark, .1);
+    border: 1px solid rgba($blue-dark, .1);
     box-shadow: 0 4px 6px rgba($dark, .1);
 
     @include mq(breakpoint(med)) {

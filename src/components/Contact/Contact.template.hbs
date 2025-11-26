@@ -1,0 +1,32 @@
+<section data-module="Contact" style="opacity: 0" class="contact u-load-hide {{containerModifiers}}">
+  <div class="l-row {{rowModifiers}} contact__row">
+    <div class="l-row__col width-auto">
+      <div class="contact__content">
+        {{#if iconModifiers}}
+          <i class="contact__icon {{iconModifiers}}"></i>
+        {{/if}}
+        <div class="contact__text">
+          {{#if title}}
+            <div class="{{titleModifiers}}">
+              {{{title}}}
+            </div>
+          {{/if}}
+          {{#if subtitle}}
+            <div class="{{subtitleModifiers}}">
+              {{{subtitle}}}
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    {{#if btnText}}
+      <div class="l-row__col width-auto">
+        <div class="contact__button">
+          <a href="{{btnLink}}" class="{{btnModifiers}}" rel="noreferrer" target="_blank">
+            {{btnText}}
+          </a>
+        </div>
+      </div>
+    {{/if}}
+  </div>
+</section>
