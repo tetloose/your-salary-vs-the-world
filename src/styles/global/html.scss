@@ -1,0 +1,30 @@
+@use '../settings' as *;
+
+html {
+  min-height: height(fullscreen);
+  visibility: visible;
+  overflow: hidden scroll;
+  background-color: $light;
+  color: $body;
+  line-height: 1.6;
+  text-rendering: optimizespeed;
+  scroll-behavior: smooth;
+
+  @include font-smoothing;
+  @include selection;
+  @include scrollbar(
+    $blue-dark,
+    $light
+  );
+  @extend %f-body;
+  @extend %f-body-regular;
+
+  &.no-scroll {
+    position: relative;
+    overflow: hidden;
+
+    body {
+      overflow: hidden;
+    }
+  }
+}

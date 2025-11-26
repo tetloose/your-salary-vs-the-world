@@ -1,0 +1,9 @@
+@use '../settings' as *;
+
+.u-content ol,
+.u-ol {
+  list-style-type: decimal;
+
+  @extend %f-paragraph;
+  @include sizing('margin-left', size(4.5));
+}

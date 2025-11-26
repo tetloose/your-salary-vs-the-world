@@ -1,0 +1,28 @@
+@use 'sass:string';
+@use '../settings/variables' as *;
+
+@mixin transition(
+  $property: 'color',
+  $duration: transition-duration(med),
+  $timing: transition-timing(med),
+  $delay: null
+) {
+  @if $property {
+    transition-property: string.unquote($property);
+  }
+
+  @if $duration {
+    transition-duration: $duration;
+  }
+
+  @if $timing {
+    transition-timing-function: $timing;
+  }
+
+  @if $delay {
+    transition-delay: $delay;
+  }
+}
+
+// Usage
+// @include transition('background, color, border', 2s, ease-in-out, 1s);

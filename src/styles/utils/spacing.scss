@@ -1,0 +1,57 @@
+@use '../settings' as *;
+
+.u-spacing-t-xxsml {
+  @include sizing('padding-top', size(2));
+}
+
+.u-spacing-t-xsml {
+  @include sizing('padding-top', size(4));
+}
+
+.u-spacing-t-sml {
+  @include sizing('padding-top', size(8));
+}
+
+.u-spacing-t-med {
+  @include sizing('padding-top', size(12));
+}
+
+.u-spacing-t-lrg {
+  @include sizing('padding-top', size(16));
+}
+
+.u-spacing-t-xlrg {
+  @include sizing('padding-top', size(20));
+}
+
+.u-spacing-t-xxlrg {
+  @include sizing('padding-top', size(24));
+}
+
+.u-spacing-b-xxsml {
+  @include sizing('padding-bottom', size(2));
+}
+
+.u-spacing-b-xsml {
+  @include sizing('padding-bottom', size(4));
+}
+
+.u-spacing-b-sml {
+  @include sizing('padding-bottom', size(8));
+}
+
+.u-spacing-b-med {
+  @include sizing('padding-bottom', size(12));
+}
+
+.u-spacing-b-lrg {
+  @include sizing('padding-bottom', size(16));
+}
+
+.u-spacing-b-xlrg {
+  @include sizing('padding-bottom', size(20));
+}
+
+.u-spacing-b-xxlrg {
+  @include sizing('padding-bottom', size(24));
+}

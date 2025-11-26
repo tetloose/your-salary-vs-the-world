@@ -1,0 +1,74 @@
+@use '../settings' as *;
+
+.u-figure {
+  $figure: &;
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  @include disable(disable);
+
+  &.is-absolute {
+    position: absolute;
+    z-index: z-index(hidden);
+  }
+
+  &.is-cover #{$figure}__img {
+    @include object-fit(cover);
+  }
+
+  &.is-contain #{$figure}__img {
+    @include object-fit(contain);
+  }
+
+  &.is-left-top #{$figure}__img {
+    object-position: left top;
+  }
+
+  &.is-left-center #{$figure}__img {
+    object-position: left center;
+  }
+
+  &.is-left-bottom #{$figure}__img {
+    object-position: left bottom;
+  }
+
+  &.is-right-top #{$figure}__img {
+    object-position: right top;
+  }
+
+  &.is-right-center #{$figure}__img {
+    object-position: right center;
+  }
+
+  &.is-right-bottom #{$figure}__img {
+    object-position: right bottom;
+  }
+
+  &.is-center-top #{$figure}__img {
+    object-position: center top;
+  }
+
+  &.is-center-bottom #{$figure}__img {
+    object-position: center bottom;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    &.is-loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      animation-name: kf-fade-in;
+      animation-duration: transition-duration(med);
+      animation-timing-function: transition-timing(med);
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+}

@@ -8,61 +8,78 @@ DIR="src/components"
 TITLE="Components"
 IMPORT_NAME="components"
 
-  read -p "Enter component name i.e Navigation bar (*no hyphens*) press [ENTER]: " COMPONENT
+read -p "Enter component name i.e Navigation bar (*no hyphens*) press [ENTER]: " COMPONENT
 
-  # EXPORT NAME
-  EXPORT_NAME=$(echo "$COMPONENT" | perl -pe '$_ = lc')                       # lowercase
-  EXPORT_NAME=$(echo "$EXPORT_NAME" | perl -pe 's/ /-/g')                     # spaces to hyphens
-  EXPORT_NAME=$(echo "$EXPORT_NAME" | perl -pe 's/(^|-)(\w)/\U$2/g')          # Uppercase first segment
+# EXPORT NAME
+EXPORT_NAME=$(echo "$COMPONENT" | perl -pe '$_ = lc')                       # lowercase
+EXPORT_NAME=$(echo "$EXPORT_NAME" | perl -pe 's/ /-/g')                     # spaces to hyphens
+EXPORT_NAME=$(echo "$EXPORT_NAME" | perl -pe 's/(^|-)(\w)/\U$2/g')          # Uppercase first segment
 
-  # COMPONENT NAME
-  COMPONENT_NAME=$(echo "$COMPONENT" | perl -pe '$_ = lc')                    # Lowercase
-  COMPONENT_NAME=$(echo "$COMPONENT_NAME" | perl -pe 's/(^|-)(\w)/\U$2/g')    # Uppercase first segment
-  COMPONENT_NAME=$(echo "$COMPONENT_NAME" | perl -pe 's/ /-/g')               # Spaces to hyphens
+# COMPONENT NAME
+COMPONENT_NAME=$(echo "$COMPONENT" | perl -pe '$_ = lc')                    # Lowercase
+COMPONENT_NAME=$(echo "$COMPONENT_NAME" | perl -pe 's/(^|-)(\w)/\U$2/g')    # Uppercase first segment
+COMPONENT_NAME=$(echo "$COMPONENT_NAME" | perl -pe 's/ /-/g')               # Spaces to hyphens
 
-  # CLASS NAME
-  CLASS_NAME=$(echo "$COMPONENT" | perl -pe '$_ = lc')                        # Lowercase
-  CLASS_NAME=$(echo "$CLASS_NAME" | perl -pe 's/ /-/g')                       # Spaces to hyphens
+# CLASS NAME
+CLASS_NAME=$(echo "$COMPONENT" | perl -pe '$_ = lc')                        # Lowercase
+CLASS_NAME=$(echo "$CLASS_NAME" | perl -pe 's/ /-/g')                       # Spaces to hyphens
 
-  # NICE NAME
-  NICE_NAME=$(echo "$COMPONENT" | perl -pe '$_ = lc')                         # lowercase
-  NICE_NAME=$(echo "$NICE_NAME" | perl -pe 's/-/ /g')                         # Convert hyphens to spaces
-  NICE_NAME=$(echo "$NICE_NAME" | perl -pe 's/(^|-)(\w)/\U$2/g')              # Uppercase first segment
+# NICE NAME
+NICE_NAME=$(echo "$COMPONENT" | perl -pe '$_ = lc')                         # lowercase
+NICE_NAME=$(echo "$NICE_NAME" | perl -pe 's/-/ /g')                         # Convert hyphens to spaces
+NICE_NAME=$(echo "$NICE_NAME" | perl -pe 's/(^|-)(\w)/\U$2/g')              # Uppercase first segment
 
-  # TITLE NAME
-  TITLE_NAME="$TITLE/$NICE_NAME"
+# TITLE NAME
+TITLE_NAME="$TITLE/$NICE_NAME"
 
-  # Create directory
-  mkdir -p $DIR/"$COMPONENT_NAME"
+# CAMEL CASE NAME (for data variable)
+CAMEL_CASE_NAME=$(echo "$EXPORT_NAME" | perl -pe 's/^(.)/\l$1/')  # lowercase first letter
 
-  # Copy Templates to directory
-  cp .scripts/template/component.ts $DIR/$COMPONENT_NAME/$COMPONENT_NAME.component.ts
-  cp .scripts/template/data.ts $DIR/$COMPONENT_NAME/$COMPONENT_NAME.data.ts
-  cp .scripts/template/styles.css $DIR/$COMPONENT_NAME/$COMPONENT_NAME.styles.css
-  cp .scripts/template/template.hbs $DIR/$COMPONENT_NAME/$COMPONENT_NAME.template.hbs
-  cp .scripts/template/types.ts $DIR/$COMPONENT_NAME/$COMPONENT_NAME.types.ts
+# Create directory
+mkdir -p $DIR/"$COMPONENT_NAME"
 
-  # Detect OS for sed compatibility
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    SED_INPLACE="sed -i ''"
-  else
-    SED_INPLACE="sed -i"
-  fi
+# Copy Templates to directory
+cp .scripts/template/component.ts $DIR/$COMPONENT_NAME/$COMPONENT_NAME.component.ts
+cp .scripts/template/styles.scss $DIR/$COMPONENT_NAME/$COMPONENT_NAME.styles.scss
+cp .scripts/template/template.hbs $DIR/$COMPONENT_NAME/$COMPONENT_NAME.template.hbs
 
-  # Find and Replace
-  # Component.ts
-  find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.component.ts" -exec $SED_INPLACE "s|EXPORT_NAME|$EXPORT_NAME|g" {} +
-  find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.component.ts" -exec $SED_INPLACE "s|COMPONENT_NAME|$COMPONENT_NAME|g" {} +
-  find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.component.ts" -exec $SED_INPLACE "s|CLASS_NAME|$CLASS_NAME|g" {} +
-  # Data.ts
-  find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.data.ts" -exec $SED_INPLACE "s|EXPORT_NAME|$EXPORT_NAME|g" {} +
-  find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.data.ts" -exec $SED_INPLACE "s|COMPONENT_NAME|$COMPONENT_NAME|g" {} +
-  # Styles.css
-  find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.styles.css" -exec $SED_INPLACE "s|CLASS_NAME|$CLASS_NAME|g" {} +
-  # Template.hbs
-  find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.template.hbs" -exec $SED_INPLACE "s|EXPORT_NAME|$EXPORT_NAME|g" {} +
-  # Types.ts
-  find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.types.ts" -exec $SED_INPLACE "s|EXPORT_NAME|$EXPORT_NAME|g" {} +
-
-  npm run lint:fix
+# Detect OS for sed compatibility
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  SED_INPLACE="sed -i ''"
+else
+  SED_INPLACE="sed -i"
 fi
+
+# Find and Replace
+# Component.ts
+find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.component.ts" -exec $SED_INPLACE "s|EXPORT_NAME|$EXPORT_NAME|g" {} +
+find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.component.ts" -exec $SED_INPLACE "s|COMPONENT_NAME|$COMPONENT_NAME|g" {} +
+# Styles.scss
+find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.styles.scss" -exec $SED_INPLACE "s|CLASS_NAME|$CLASS_NAME|g" {} +
+# Template.hbs
+find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.template.hbs" -exec $SED_INPLACE "s|EXPORT_NAME|$EXPORT_NAME|g" {} +
+find "$DIR/$COMPONENT_NAME/" -type f -name "$COMPONENT_NAME.template.hbs" -exec $SED_INPLACE "s|CLASS_NAME|$CLASS_NAME|g" {} +
+
+# Update modules.config.ts
+MODULES_CONFIG="src/config/modules.config.ts"
+CHUNK_NAME=$(echo "$COMPONENT_NAME" | perl -pe '$_ = lc')  # lowercase for chunk name
+
+# Add comma to the last entry before closing brace, then add new module entry
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # First, add comma to line before closing brace (if it doesn't have one)
+  sed -i '' '$!N;/\n}$/{s/)\n/),\n/;P;D;}' "$MODULES_CONFIG"
+  # Then add new module entry before the closing brace
+  sed -i '' "/^}$/i\\
+  $EXPORT_NAME: () =>\\
+    import(\\
+      /* webpackChunkName: '$CHUNK_NAME' */ '@components/$COMPONENT_NAME/$COMPONENT_NAME.component'\\
+    )\\
+" "$MODULES_CONFIG"
+else
+  # First, add comma to line before closing brace (if it doesn't have one)
+  sed -i '$!N;/\n}$/{s/)\n/),\n/;P;D;}' "$MODULES_CONFIG"
+  # Then add new module entry before the closing brace
+  sed -i "/^}$/i\\  $EXPORT_NAME: () =>\\n    import(\\n      /* webpackChunkName: '$CHUNK_NAME' */ '@components/$COMPONENT_NAME/$COMPONENT_NAME.component'\\n    )" "$MODULES_CONFIG"
+fi
+
+npm run lint:fix

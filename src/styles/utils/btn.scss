@@ -1,0 +1,192 @@
+@use '../settings' as *;
+
+.u-btn-dark {
+  background-color: $dark;
+  border-color: $dark;
+  color: $light;
+
+  &:focus {
+    background-color: $dark-hover;
+    border-color: $dark-hover;
+    outline-color: $dark;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      background-color: $dark-hover;
+      border-color: $dark-hover;
+      color: $light;
+    }
+  }
+}
+
+.u-btn-light {
+  background-color: $light;
+  border-color: $light;
+  color: $dark;
+
+  &:focus {
+    background-color: $light-hover;
+    border-color: $light-hover;
+    outline-color: $light;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      background-color: $light-hover;
+      border-color: $light-hover;
+      color: $dark;
+    }
+  }
+}
+
+.u-btn-blue-light {
+  background-color: $blue-light;
+  border-color: $blue-light;
+  color: $light;
+
+  &:focus {
+    background-color: $blue-light-hover;
+    border-color: $blue-light-hover;
+    outline-color: $blue-light;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      background-color: $blue-light-hover;
+      border-color: $blue-light-hover;
+      color: $light;
+    }
+  }
+}
+
+.u-btn-blue-dark {
+  background-color: $blue-dark;
+  border-color: $blue-dark;
+  color: $light;
+
+  &:focus {
+    background-color: $blue-dark-hover;
+    border-color: $blue-dark-hover;
+    outline-color: $blue-dark;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      background-color: $blue-dark-hover;
+      border-color: $blue-dark-hover;
+      color: $light;
+    }
+  }
+}
+
+.u-btn-body {
+  background-color: $body;
+  border-color: $body;
+  color: $light;
+
+  &:focus {
+    background-color: $body-hover;
+    border-color: $body-hover;
+    outline-color: $body;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      background-color: $body-hover;
+      border-color: $body-hover;
+      color: $light;
+    }
+  }
+}
+
+.u-btn-heading {
+  background-color: $heading;
+  border-color: $heading;
+  color: $light;
+
+  &:focus {
+    background-color: $heading-hover;
+    border-color: $heading-hover;
+    outline-color: $heading;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      background-color: $heading-hover;
+      border-color: $heading-hover;
+      color: $light;
+    }
+  }
+}
+
+.u-btn-cream {
+  background-color: $cream;
+  border-color: $cream;
+  color: $dark;
+
+  &:focus {
+    background-color: $cream-hover;
+    border-color: $cream-hover;
+    outline-color: $cream;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      background-color: $cream-hover;
+      border-color: $cream-hover;
+      color: $dark;
+    }
+  }
+}
+
+[class*='u-btn-'] {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-style: solid;
+  border-radius: 2rem;
+  text-decoration: none;
+  appearance: none;
+
+  @include sizing('border-width', size(.25));
+  @include sizing('padding', [size(3), size(6)]);
+  @include user-select(disable);
+  @extend %f-btn;
+  @extend %f-body-bold;
+  @extend %f-uppercase;
+
+  &.is-block {
+    display: block;
+  }
+
+  &:focus {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-offset: 4px;
+  }
+
+  @include mq-hover {
+    @include transition('background-color, border-color, color');
+
+    &:hover,
+    &:active {
+      outline-width: 0;
+    }
+  }
+
+  &[disabled] {
+    opacity: .4;
+
+    @include disable(disable);
+  }
+}

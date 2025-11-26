@@ -1,0 +1,16 @@
+/* stylelint-disable declaration-no-important */
+@use '../mixins/media-query' as *;
+
+@include mq-reduce-motion {
+  *,
+  *::before,
+  *::after {
+    transition-delay: 0ms !important;
+    transition-duration: 0ms !important;
+    animation: none !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+}

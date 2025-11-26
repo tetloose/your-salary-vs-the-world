@@ -1,0 +1,21 @@
+@use '../settings' as *;
+
+.u-bg-light {
+  background-color: $light;
+}
+
+.u-bg-dark {
+  background-color: $dark;
+}
+
+.u-bg-blue-light {
+  background-color: $blue-light;
+}
+
+.u-bg-blue-dark {
+  background-color: $blue-dark;
+}
+
+.u-bg-cream {
+  background-color: $cream;
+}

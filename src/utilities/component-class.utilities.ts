@@ -1,3 +1,5 @@
+import { settings } from '@config/settings.config'
+
 export class ComponentClass {
   module: HTMLElement
 
@@ -8,21 +10,18 @@ export class ComponentClass {
   load() {
     const { module } = this
     const { classList } = module
-    const animate = {
-      show: 'u-load-fade-in',
-      hide: 'u-load-hide'
-    }
+    const { fadeIn, hide, duration } = settings
 
     module.style.opacity = ''
 
     setTimeout(() => {
-      classList.add(animate.show)
+      classList.add(fadeIn)
 
       setTimeout(() => {
-        classList.remove(animate.show)
-        classList.remove(animate.hide)
-      }, 400)
-    }, 400)
+        classList.remove(fadeIn)
+        classList.remove(hide)
+      }, duration)
+    }, duration)
   }
 
   render<T>({

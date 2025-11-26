@@ -1,0 +1,149 @@
+@use 'sass:map';
+@use '../settings' as *;
+
+.l-row {
+  $row: &;
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include sizing('max-width', layout(max-width));
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.align-flex-start {
+    align-items: flex-start;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.align-flex-end {
+    align-items: flex-end;
+  }
+
+  &.justify-flex-start {
+    justify-content: flex-start;
+  }
+
+  &.justify-center {
+    justify-content: center;
+  }
+
+  &.justify-flex-end {
+    justify-content: flex-end;
+  }
+
+  &.direction-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  @include mq(breakpoint(med)) {
+    &.med-direction-row-reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__col {
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include sizing('padding-right', size(layout(gutter)));
+    @include sizing('padding-left', size(layout(gutter)));
+
+    &.width-auto {
+      width: auto;
+    }
+
+    &.no-gutter {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    @for $i from 1 through layout(columns) {
+      &.width-#{$i} {
+        width: column-width(layout(columns), #{$i});
+      }
+    }
+
+    @include mq(breakpoint(sml)) {
+      &.sml-no-gutter {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      @for $i from 1 through layout(columns) {
+        &.sml-width-#{$i} {
+          width: column-width(layout(columns), #{$i});
+        }
+      }
+    }
+
+    @include mq(breakpoint(med)) {
+      &.med-no-gutter {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      @for $i from 1 through layout(columns) {
+        &.med-width-#{$i} {
+          width: column-width(layout(columns), #{$i});
+        }
+      }
+    }
+
+    @include mq(breakpoint(lrg)) {
+      &.lrg-no-gutter {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      @for $i from 1 through layout(columns) {
+        &.lrg-width-#{$i} {
+          width: column-width(layout(columns), #{$i});
+        }
+      }
+    }
+
+    @include mq(breakpoint(xlrg)) {
+      &.xlrg-no-gutter {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      @for $i from 1 through layout(columns) {
+        &.xlrg-width-#{$i} {
+          width: column-width(layout(columns), #{$i});
+        }
+      }
+    }
+
+    @include mq(breakpoint(xxlrg)) {
+      &.xxlrg-no-gutter {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      @for $i from 1 through layout(columns) {
+        &.xxlrg-width-#{$i} {
+          width: column-width(layout(columns), #{$i});
+        }
+      }
+    }
+  }
+
+  #{$row} {
+    width: auto;
+    max-width: none;
+
+    @include sizing('margin-right', -#{size(layout(gutter))});
+    @include sizing('margin-left', -#{size(layout(gutter))});
+  }
+}

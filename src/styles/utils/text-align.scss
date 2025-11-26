@@ -1,0 +1,13 @@
+@use '../settings' as *;
+
+.u-text-align-left {
+  @extend %f-text-align-left;
+}
+
+.u-text-align-right {
+  @extend %f-text-align-right;
+}
+
+.u-text-align-center {
+  @extend %f-text-align-center;
+}

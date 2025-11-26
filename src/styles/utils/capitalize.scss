@@ -1,0 +1,5 @@
+@use '../settings' as *;
+
+.u-capitalize {
+  @extend %f-capitalize;
+}

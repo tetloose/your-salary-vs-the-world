@@ -1,0 +1,9 @@
+@use '@styles/settings' as *;
+
+.content-image {
+  &__image {
+    @include mq(breakpoint(med)) {
+      @include sizing('height', 400px);
+    }
+  }
+}

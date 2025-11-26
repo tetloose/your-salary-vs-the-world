@@ -1,0 +1,103 @@
+@use '@styles/settings' as *;
+
+.score-card {
+  $score-card: &;
+
+  &__inside {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+    background-clip: padding-box;
+    border: 1px solid rgba($dark, .2);
+    box-shadow: 0 7px 7px 2px rgb(0 0 0 / 20%);
+
+    @include mq(breakpoint(med)) {
+      @include sizing('height', 250px);
+    }
+
+    &.is-left {
+      #{$score-card}__image {
+        right: 0;
+      }
+
+      #{$score-card}__content {
+        @include sizing('padding-left', size(12));
+        @include sizing('padding-right', size(8));
+      }
+    }
+
+    &.is-right {
+      #{$score-card}__row {
+        flex-direction: row-reverse;
+      }
+
+      #{$score-card}__image {
+        left: 0;
+      }
+
+      #{$score-card}__content {
+        @include sizing('padding-right', size(12));
+        @include sizing('padding-left', size(8));
+      }
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+
+    @include mq(breakpoint(med)) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  &__content {
+    @include sizing('padding-top', size(8));
+    @include sizing('padding-bottom', size(8));
+  }
+
+  &__figure {
+    height: 100%;
+  }
+}
+
+.score {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-direction: column;
+  position: absolute;
+  z-index: z-index(sml);
+  justify-content: flex-end;
+  color: $light;
+
+  @include sizing('inset', size(5));
+
+  &__num {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: $blue-dark;
+    color: $light;
+
+    @include sizing('width', 35px);
+    @include sizing('height', 35px);
+  }
+
+  &__pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $blue-dark;
+    color: $light;
+
+    @include sizing('margin-top', size(2));
+    @include sizing('padding', size(3));
+  }
+}

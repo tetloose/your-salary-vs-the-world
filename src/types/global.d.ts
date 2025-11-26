@@ -3,3 +3,8 @@ declare module '*.hbs' {
 
   export default template
 }
+
+declare module '*.scss' {
+  const content: Record<string, string>
+  export default content
+}

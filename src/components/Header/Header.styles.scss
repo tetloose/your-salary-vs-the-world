@@ -1,0 +1,24 @@
+@use '@styles/settings' as *;
+
+.header {
+  border-bottom: 1px solid rgba($dark, .2);
+
+  &__logo {
+    @include sizing('max-width', 150px);
+
+    &:focus {
+      outline: 2px solid $body;
+      outline-offset: 4px;
+    }
+
+    @include mq-hover {
+      @include transition('opacity');
+
+      &:hover,
+      &:active {
+        opacity: .8;
+        outline-width: 0;
+      }
+    }
+  }
+}

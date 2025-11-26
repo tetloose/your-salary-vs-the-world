@@ -1,0 +1,14 @@
+@use '../settings' as *;
+
+.u-content blockquote,
+.u-blockquote {
+  position: relative;
+
+  @extend %f-italic;
+
+  &::before,
+  &::after {
+    content: '"';
+    display: inline;
+  }
+}

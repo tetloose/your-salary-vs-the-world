@@ -1,11 +1,36 @@
-<header data-module="Hero" style="opacity: 0" class="u-load-hide">
-  <div
-    class="flex overflow-hidden flex-col justify-center items-center px-20 py-24 font-extrabold text-center bg-grey text-slate-700 max-md:px-5 max-md:pt-24"
-  >
-    <div class="flex flex-col max-w-full w-[710px]">
-      <h1 class="text-9xl leading-36 max-md:max-w-full max-md:text-6xl max-md:leading-none font-family-Masqualero">
-        {{title}}
-      </h1>
+<section
+  data-module="Hero"
+  style="opacity: 0"
+  class="hero u-load-hide u-bg-{{bg}} u-spacing-t-{{pt}} u-spacing-b-{{pb}}"
+>
+  <div class="l-row direction-row-reverse align-center">
+    <div class="l-row__col med-width-6">
+      {{#if image}}
+        <figure class="u-figure is-contain">
+          <img class="u-figure__img" src="{{image}}" alt="" loading="lazy" />
+        </figure>
+      {{/if}}
+    </div>
+    <div class="l-row__col med-width-6">
+      <div class="hero__content u-text-{{color}}">
+        {{#if subtitle}}
+          <div class="u-small u-uppercase u-bold">
+            {{{subtitle}}}
+          </div>
+        {{/if}}
+        {{#if title}}
+          <div class="u-h1 u-bold u-spacing-t-xxsml">
+            {{{title}}}
+          </div>
+        {{/if}}
+        {{#if btnText}}
+          <div class="u-spacing-t-sml">
+            <a href="{{btnLink}}" class="u-btn-{{btnColor}}">
+              {{btnText}}
+            </a>
+          </div>
+        {{/if}}
+      </div>
     </div>
   </div>
-</header>
+</section>

@@ -1,0 +1,50 @@
+@use '../settings' as *;
+
+[class*='u-overlay-'] {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: z-index(sml);
+    opacity: .2;
+    inset: 0;
+  }
+}
+
+.u-overlay-dark {
+  &::before {
+    background-color: $dark;
+  }
+}
+
+.u-overlay-light {
+  &::before {
+    background-color: $light;
+  }
+}
+
+.u-overlay-blue-light {
+  &::before {
+    background-color: $blue-light;
+  }
+}
+
+.u-overlay-blue-dark {
+  &::before {
+    background-color: $blue-dark;
+  }
+}
+
+.u-overlay-body {
+  &::before {
+    background-color: $body;
+  }
+}
+
+.u-overlay-heading {
+  &::before {
+    background-color: $heading;
+  }
+}

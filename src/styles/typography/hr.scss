@@ -1,0 +1,8 @@
+@use '../settings' as *;
+
+.u-content hr,
+.u-hr {
+  width: 100%;
+
+  @include sizing('height', size(.5));
+}

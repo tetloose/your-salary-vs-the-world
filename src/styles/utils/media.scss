@@ -1,0 +1,26 @@
+@use '../settings' as *;
+
+.u-media {
+  $iframe: &;
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &.has-loaded #{$iframe}__iframe {
+    animation-name: kf-fade-in;
+    animation-duration: transition-duration(med);
+    animation-timing-function: transition-timing(med);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  &__iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}

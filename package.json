@@ -13,8 +13,8 @@
     "lint:fix": "npm run lint:js:fix && npm run lint:css:fix && npm run lint:html:fix",
     "lint:js": "eslint ./src",
     "lint:js:fix": "eslint ./src --fix",
-    "lint:css": "stylelint \"src/**/*.css\"",
-    "lint:css:fix": "stylelint \"src/**/*.css\" --fix",
+    "lint:css": "stylelint \"src/**/*.scss\"",
+    "lint:css:fix": "stylelint \"src/**/*.scss\" --fix",
     "lint:html": "prettier --check \"src/components/**/*.hbs\"",
     "lint:html:fix": "prettier --write \"src/components/**/*.hbs\"",
     "gen:component": "bash .scripts/generate-component",
@@ -26,9 +26,9 @@
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.24.0",
     "@stylistic/stylelint-plugin": "^4.0.0",
-    "@tailwindcss/postcss": "^4.1.17",
     "@typescript-eslint/eslint-plugin": "^8.30.1",
     "@typescript-eslint/parser": "^8.30.1",
+    "autoprefixer": "^10.4.22",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.2",
     "eslint": "^9.24.0",
@@ -51,11 +51,14 @@
     "postcss-loader": "^8.1.1",
     "prettier": "^3.5.3",
     "prettier-plugin-handlebars": "^0.0.1",
+    "sass": "^1.94.2",
+    "sass-loader": "^16.0.6",
+    "style-loader": "^4.0.0",
     "stylelint": "^16.25.0",
     "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-order": "^7.0.0",
     "stylelint-webpack-plugin": "^5.0.1",
-    "tailwindcss": "^4.1.17",
     "terser-webpack-plugin": "^5.3.14",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
@@ -74,22 +77,23 @@
     ],
     "overrides": [
       {
-        "files": "*.hbs",
+        "files": "src/components/**/*.hbs",
         "options": {
           "parser": "glimmer",
           "singleQuote": false,
           "printWidth": 120,
-          "htmlWhitespaceSensitivity": "ignore",
-          "singleAttributePerLine": false
+          "htmlWhitespaceSensitivity": "css",
+          "singleAttributePerLine": true
         }
       },
       {
         "files": "src/templates/*.hbs",
         "options": {
-          "parser": "html",
+          "parser": "glimmer",
           "singleQuote": false,
           "printWidth": 120,
-          "htmlWhitespaceSensitivity": "ignore"
+          "htmlWhitespaceSensitivity": "css",
+          "singleAttributePerLine": false
         }
       }
     ]

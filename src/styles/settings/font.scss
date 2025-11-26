@@ -1,0 +1,162 @@
+@use '../mixins/sizing' as *;
+@use 'variables' as *;
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap';
+
+%f-body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+%f-heading {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+%f-body-light {
+  font-weight: 300;
+}
+
+%f-heading-light {
+  font-weight: 300;
+}
+
+%f-body-regular {
+  font-weight: 400;
+}
+
+%f-heading-regular {
+  font-weight: 400;
+}
+
+%f-body-medium {
+  font-weight: 500;
+}
+
+%f-heading-medium {
+  font-weight: 500;
+}
+
+%f-body-bold {
+  font-weight: 700;
+}
+
+%f-heading-bold {
+  font-weight: 700;
+}
+
+%f-italic {
+  font-style: italic;
+}
+
+%f-uppercase {
+  text-transform: uppercase;
+}
+
+%f-capitalize {
+  text-transform: capitalize;
+}
+
+%f-lowercase {
+  text-transform: lowercase;
+}
+
+%f-text-align-left {
+  text-align: left;
+}
+
+%f-text-align-right {
+  text-align: right;
+}
+
+%f-text-align-center {
+  text-align: center;
+}
+
+%f-text-align-justify {
+  text-align: justify;
+}
+
+%f-h1 {
+  line-height: 1.2;
+
+  @include sizing('font-size', font-size(xxxxxlrg));
+  @extend %f-heading;
+}
+
+%f-h2 {
+  line-height: 1.2;
+
+  @include sizing('font-size', font-size(xxxxlrg));
+  @extend %f-heading;
+}
+
+%f-h3 {
+  line-height: 1.2;
+
+  @include sizing('font-size', font-size(xxxlrg));
+  @extend %f-heading;
+}
+
+%f-h4 {
+  line-height: 1.2;
+
+  @include sizing('font-size', font-size(xxlrg));
+  @extend %f-heading;
+}
+
+%f-h5 {
+  line-height: 1.3;
+
+  @include sizing('font-size', font-size(xlrg));
+  @extend %f-heading;
+}
+
+%f-h6 {
+  line-height: 1.3;
+
+  @include sizing('font-size', font-size(lrg));
+  @extend %f-heading;
+}
+
+%f-small {
+  @include sizing('font-size', font-size(sml));
+}
+
+%f-paragraph {
+  @include sizing('font-size', font-size(med));
+}
+
+%f-btn {
+  @include sizing('font-size', font-size(sml));
+  @extend %f-heading;
+}
+
+%f-label {
+  @include sizing('font-size', font-size(med));
+}
+
+%f-icon-sml {
+  @include sizing('font-size', font-size(sml));
+}
+
+%f-icon-med {
+  @include sizing('font-size', font-size(med));
+}
+
+%f-icon-lrg {
+  @include sizing('font-size', font-size(lrg));
+}
+
+%f-icon-xlrg {
+  @include sizing('font-size', font-size(xlrg));
+}
+
+%f-icon-xxlrg {
+  @include sizing('font-size', font-size(xxlrg));
+}
+
+%f-icon-xxxlrg {
+  @include sizing('font-size', font-size(xxxlrg));
+}
+
+%f-icon-xxxxxlrg {
+  @include sizing('font-size', font-size(xxxxxlrg));
+}

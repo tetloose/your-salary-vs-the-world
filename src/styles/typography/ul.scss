@@ -1,0 +1,9 @@
+@use '../settings' as *;
+
+.u-content ul,
+.u-ul {
+  list-style-type: disc;
+
+  @extend %f-paragraph;
+  @include sizing('margin-left', size(4.5));
+}

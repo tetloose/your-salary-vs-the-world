@@ -1,0 +1,25 @@
+@use '../settings' as *;
+
+.u-radius-tny {
+  border-radius: radius(tny);
+}
+
+.u-radius-sml {
+  border-radius: radius(sml);
+}
+
+.u-radius-med {
+  border-radius: radius(med);
+}
+
+.u-radius-lrg {
+  border-radius: radius(lrg);
+}
+
+.u-radius-xlrg {
+  border-radius: radius(xlrg);
+}
+
+.u-radius-round {
+  border-radius: radius(round);
+}

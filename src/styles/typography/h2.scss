@@ -1,0 +1,10 @@
+@use '../settings' as *;
+
+.u-content h2,
+.u-h2 {
+  @extend %f-h2;
+
+  strong {
+    @extend %f-heading-bold;
+  }
+}

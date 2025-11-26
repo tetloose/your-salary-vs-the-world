@@ -2,6 +2,86 @@
 <html lang="en">
   {{> Head/Head.template }}
   <body>
-    {{> Hero/Hero.template }} {{> Footer/Footer.template }}
+    {{> Header/Header.template }}
+    {{> Hero/Hero.template
+      bg='cream'
+      pt='lrg'
+      pb='lrg'
+      color='body'
+      subtitle='<h6>Your guide</h6>'
+      title='<h1>Tips for working abroad</h1>'
+      btnText='Learn more'
+      btnLink='#chapter-1'
+      btnColor='blue-dark'
+      image='../components/Hero/images/hero.jpg'
+    }}
+    <div class="l-row med-direction-row-reverse">
+      <div class="l-row__col med-width-9">
+        {{> Content/Content.template
+          bg='light'
+          color='body'
+          link='body'
+          pt='med'
+          pb=''
+          content='
+            <h3><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, dolorem assumenda at aut harum unde quod, amet corporis iusto cum, natus sint molestias quas velit eum doloremque non quidem odit.<sup>[1]</sup></strong></h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima praesentium sint aliquam, <a href="https://www.remitly.com/us/en" target="_blank" rel="noreferrer">link</a> ipsum a temporibus! Dicta, minus non aliquid neque laborum omnis, nulla, accusantium commodi pariatur modi iusto sapiente qui!</p>
+          '
+        }}
+        {{> Score-card/Score-card.template
+          bg='light'
+          pt='med'
+          alignment='left'
+          contentCol='7'
+          imageCol='5'
+          content='
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro nesciunt nobis dolorum harum, inventore perspiciatis placeat suscipit optio illo quasi eius quis aspernatur rerum nostrum perferendis culpa dolore laudantium! Voluptate.</p>
+          '
+          overlay='dark'
+          image='../components/Score-card/images/image-1.jpg'
+          num='1'
+          country='Australia'
+          subtitle='Expat Index score'
+          score='8.20/10'
+        }}
+        {{> Chapter/Chapter.template
+          id='chapter-1'
+          bg='light'
+          pt='med'
+          pb='med'
+          subtitle='<h6>Chapter 1</h6>'
+          title='<h2>Tips for working abroad</h2>'
+          content='<p>It’s natural to feel nervous about starting a job in a new country. While everywhere will be different, there are certain ways of thinking and practical tactics that can make the transition to a new location a little bit easier. Here are some of the most valuable tips to keep in mind when working overseas for the first time:</p>'
+        }}
+        {{> Content-image/Content-image.template
+          bg='cream'
+          pt='lrg'
+          pb='lrg'
+          rowModifiers='align-center'
+          image='../components/Content-image/images/image.svg'
+          imageAlt='Image'
+          figureModifiers='is-contain u-radius-sml'
+          color='body'
+          link='body'
+          subtitle='<h6>Step 1</h6>'
+          title='<h2>Start with a local bank account</h2>'
+          content='<p>Opening a local bank account is one of the first steps you should take...</p>'
+        }}
+      </div>
+      <div class="l-row__col med-width-3">
+        {{> Social/Social.template
+          shareTitle='Share this article'
+          tocTitle='Table of contents'
+          tocLinks=(array
+            (hash id='chapter-1' href='#chapter-1' text='What is financial literacy')
+            (hash id='chapter-2' href='#chapter-2' text='Why is it important for kids')
+            (hash id='chapter-3' href='#chapter-3' text='How to teach kids about money')
+            (hash id='chapter-4' href='#chapter-4' text='Tips and tricks for parents')
+          )
+        }}
+
+      </div>
+    </div>
+    {{> Footer/Footer.template }}
   </body>
 </html>

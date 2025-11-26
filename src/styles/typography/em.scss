@@ -1,0 +1,6 @@
+@use '../settings/font' as *;
+
+.u-content em,
+.u-italic {
+  @extend %f-italic;
+}

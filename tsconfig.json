@@ -11,9 +11,6 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
       "@styles/*": [
         "./src/styles/*"
       ],
@@ -25,6 +22,9 @@
       ],
       "@config/*": [
         "./src/config/*"
+      ],
+      "@fonts/*": [
+        "./src/fonts/*"
       ]
     }
   },

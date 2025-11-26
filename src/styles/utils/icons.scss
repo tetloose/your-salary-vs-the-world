@@ -1,0 +1,218 @@
+@use '../settings' as *;
+@include font-face('icon', '@fonts/icons/icon', normal, svg woff ttf);
+
+[class*='u-icon-'] {
+  display: inline-block;
+  font-style: normal;
+  font-family: icon, sans-serif;
+  line-height: 1;
+  text-rendering: auto;
+
+  @include font-smoothing;
+
+  &.is-link {
+    text-decoration: none;
+
+    &:focus {
+      outline-width: 2px;
+      outline-style: solid;
+      outline-offset: 4px;
+    }
+
+    @include mq-hover {
+      @include transition;
+
+      &:hover,
+      &:active {
+        outline-width: 0;
+      }
+    }
+  }
+
+  &.is-dark {
+    color: $dark;
+
+    &.is-link {
+      &:focus {
+        outline-color: $dark;
+      }
+
+      @include mq-hover {
+        &:hover,
+        &:active {
+          color: $dark-hover;
+        }
+      }
+    }
+  }
+
+  &.is-light {
+    color: $light;
+
+    &.is-link {
+      &:focus {
+        outline-color: $light;
+      }
+
+      @include mq-hover {
+        &:hover,
+        &:active {
+          color: $light-hover;
+        }
+      }
+    }
+  }
+
+  &.is-blue-light {
+    color: $blue-light;
+
+    &.is-link {
+      &:focus {
+        outline-color: $blue-light;
+      }
+
+      @include mq-hover {
+        &:hover,
+        &:active {
+          color: $blue-light-hover;
+        }
+      }
+    }
+  }
+
+  &.is-blue-dark {
+    color: $blue-dark;
+
+    &.is-link {
+      &:focus {
+        outline-color: $blue-dark;
+      }
+
+      @include mq-hover {
+        &:hover,
+        &:active {
+          color: $blue-dark-hover;
+        }
+      }
+    }
+  }
+
+  &.is-body {
+    color: $body;
+
+    &.is-link {
+      &:focus {
+        outline-color: $body;
+      }
+
+      @include mq-hover {
+        &:hover,
+        &:active {
+          color: $body-hover;
+        }
+      }
+    }
+  }
+
+  &.is-heading {
+    color: $heading;
+
+    &.is-link {
+      &:focus {
+        outline-color: $heading;
+      }
+
+      @include mq-hover {
+        &:hover,
+        &:active {
+          color: $heading-hover;
+        }
+      }
+    }
+  }
+
+  &.is-cream {
+    color: $cream;
+
+    &.is-link {
+      &:focus {
+        outline-color: $cream;
+      }
+
+      @include mq-hover {
+        &:hover,
+        &:active {
+          color: $cream-hover;
+        }
+      }
+    }
+  }
+
+  &.is-sml {
+    @include sizing('font-size', icon(sml));
+  }
+
+  &.is-med {
+    @include sizing('font-size', icon(med));
+  }
+
+  &.is-lrg {
+    @include sizing('font-size', icon(lrg));
+  }
+
+  &.is-xlrg {
+    @include sizing('font-size', icon(xlrg));
+  }
+
+  &.is-xxlrg {
+    @include sizing('font-size', icon(xxlrg));
+  }
+
+  &.is-xxxlrg {
+    @include sizing('font-size', icon(xxxlrg));
+  }
+
+  &.is-xxxxlrg {
+    @include sizing('font-size', icon(xxxxlrg));
+  }
+
+  &.is-xxxxxlrg {
+    @include sizing('font-size', icon(xxxxxlrg));
+  }
+}
+
+.u-icon-chevron-right::before {
+  content: '\e900';
+}
+
+.u-icon-chevron-left::before {
+  content: '\e901';
+}
+
+.u-icon-chevron-down::before {
+  content: '\e902';
+}
+
+.u-icon-chevron-up::before {
+  content: '\e903';
+}
+
+.u-icon-x::before {
+  content: '\e904';
+}
+
+.u-icon-wifi::before {
+  content: '\e905';
+}
+
+.u-icon-linkedin::before {
+  content: '\e906';
+}
+
+.u-icon-facebook::before {
+  content: '\e907';
+}
+
+.u-icon-reddit::before {
+  content: '\e908';
+}

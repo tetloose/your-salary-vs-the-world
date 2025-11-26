@@ -1,0 +1,17 @@
+@use '../settings' as *;
+
+.u-height-fullscreen {
+  min-height: height(fullscreen);
+}
+
+.u-height-half {
+  min-height: height(half);
+}
+
+.u-height-1-third {
+  min-height: height(one-third);
+}
+
+.u-height-2-third {
+  min-height: height(two-third);
+}

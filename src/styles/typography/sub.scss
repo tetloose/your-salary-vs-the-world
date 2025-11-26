@@ -1,0 +1,10 @@
+@use '../settings' as *;
+
+.u-content sub,
+.u-sub {
+  position: relative;
+  font-size: 50%;
+
+  @include sizing('bottom', size(-2.5));
+  @include sizing('left', size(-1));
+}

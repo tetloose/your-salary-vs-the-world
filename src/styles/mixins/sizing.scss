@@ -1,0 +1,65 @@
+@use '../settings/variables' as *;
+@use 'media-query' as *;
+@use 'strip-unit' as *;
+@use 'sass:list';
+@use 'sass:meta';
+
+$min: breakpoint(viewport-width(breakpoint-min));
+$max: breakpoint(viewport-width(breakpoint-max));
+$context: calc(strip-unit($max) * .01 * 1px);
+
+@mixin sizing($css-property, $values) {
+  @if meta.type-of($values) == 'list' {
+    @include mq($min, max-width) {
+      $result: ();
+
+      @each $value in $values {
+        $result: list.append(
+          $result,
+          calc(#{ $value } / #{ $context } * #{ viewport-width(adjustment-min) })
+        );
+      }
+
+      #{$css-property}: $result;
+    }
+
+    @include mq($min) {
+      $result: ();
+
+      @each $value in $values {
+        $result: list.append(
+          $result,
+          calc(#{ $value } / #{ $context } * #{ viewport-width(adjustment-max) })
+        );
+      }
+
+      #{$css-property}: $result;
+    }
+
+    @include mq($max) {
+      #{$css-property}: $values;
+    }
+  } @else {
+    @include mq($min, max-width) {
+      #{$css-property}: calc(#{ $values } / #{ $context } * #{ viewport-width(adjustment-min) });
+    }
+
+    @include mq($min) {
+      #{$css-property}: calc(#{ $values } / #{ $context } * #{ viewport-width(adjustment-max) });
+    }
+
+    @include mq($max) {
+      #{$css-property}: $values;
+    }
+  }
+}
+
+// Usage
+// Single value
+// @include sizing('padding-top', size(2));
+// Multi value
+// pass in values via css list array
+// @include sizing('padding', [size(2.5), size(5), size(7.5), size(10)]);
+// @include sizing('padding', [size(2.5), size(5), size(7.5)]);
+// @include sizing('padding', [size(2.5), size(5)]);
+// @include sizing('padding', [size(2.5), 0]);

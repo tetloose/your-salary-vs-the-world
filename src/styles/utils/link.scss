@@ -1,0 +1,134 @@
+/* stylelint-disable no-descending-specificity */
+@use '../settings' as *;
+
+.u-link-dark a {
+  color: $dark;
+
+  &:focus {
+    outline-color: $dark;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      color: $dark-hover;
+    }
+  }
+}
+
+.u-link-light a {
+  color: $light;
+
+  &:focus {
+    outline-color: $light;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      color: $light-hover;
+    }
+  }
+}
+
+.u-link-blue-light a {
+  color: $blue-light;
+
+  &:focus {
+    outline-color: $blue-light;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      color: $blue-light-hover;
+    }
+  }
+}
+
+.u-link-blue-dark a {
+  color: $blue-dark;
+
+  &:focus {
+    outline-color: $blue-dark;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      color: $blue-dark-hover;
+    }
+  }
+}
+
+.u-link-body a {
+  color: $body;
+
+  &:focus {
+    outline-color: $body;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      color: $body-hover;
+    }
+  }
+}
+
+.u-link-heading a {
+  color: $heading;
+
+  &:focus {
+    outline-color: $heading;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      color: $heading-hover;
+    }
+  }
+}
+
+.u-link-cream a {
+  color: $cream;
+
+  &:focus {
+    outline-color: $cream;
+  }
+
+  @include mq-hover {
+    &:hover,
+    &:active {
+      color: $cream-hover;
+    }
+  }
+}
+
+[class*='u-link-'] {
+  a {
+    text-decoration: underline;
+
+    &:focus {
+      outline-width: 2px;
+      outline-style: solid;
+      outline-offset: 4px;
+      text-decoration: none;
+    }
+
+    @include mq-hover {
+      @include transition;
+
+      &:hover,
+      &:active {
+        outline-width: 0;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &.no-underline a {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,5 @@
+@use '../settings' as *;
+
+.u-lowercase {
+  @extend %f-lowercase;
+}

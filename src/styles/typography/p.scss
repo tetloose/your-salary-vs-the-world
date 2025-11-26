@@ -1,0 +1,6 @@
+@use '../settings' as *;
+
+.u-content p,
+.u-p {
+  @extend %f-paragraph;
+}

@@ -1,0 +1,48 @@
+@use '../settings' as *;
+
+.u-content {
+  .u-table,
+  .u-figure,
+  .u-media,
+  pre,
+  hr,
+  img,
+  blockquote {
+    @include sizing('margin-top', size(8));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include sizing('padding-top', size(8));
+  }
+
+  p {
+    @include sizing('padding-top', size(5));
+
+    &:has(.u-btn):not(:first-child) {
+      @include sizing('padding-top', size(12));
+    }
+  }
+
+  ul,
+  ol {
+    @include sizing('padding-top', size(3));
+
+    li {
+      @include sizing('padding-top', size(2));
+    }
+  }
+
+  ol {
+    @include sizing('padding-left', size(3));
+  }
+
+  > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

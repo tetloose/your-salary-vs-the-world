@@ -1,0 +1,11 @@
+@use '../settings/color' as *;
+
+@mixin selection(
+  $bg: $dark,
+  $color: $light
+) {
+  ::selection {
+    background-color: $bg;
+    color: $color;
+  }
+}

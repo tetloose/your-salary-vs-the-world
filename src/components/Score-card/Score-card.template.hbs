@@ -1,0 +1,48 @@
+<section
+  data-module="ScoreCard"
+  style="opacity: 0"
+  class="score-card u-load-hide u-bg-{{bg}} u-spacing-t-{{pt}} u-spacing-b-{{pb}}"
+>
+  <div class="l-row">
+    <div class="l-row__col">
+      <div class="score-card__inside u-bg-light is-{{alignment}} u-radius-xlrg">
+        <div class="score-card__row l-row">
+          <div class="score-card__image l-row__col med-width-{{imageCol}} med-no-gutter">
+            <figure class="score-card__figure u-figure is-cover u-overlay-{{overlay}}">
+              <span class="score">
+                {{#if num}}
+                  <small class="score__num u-small u-bold u-radius-round">
+                    {{num}}
+                  </small>
+                {{/if}}
+                {{#if country}}
+                  <h3 class="u-h3 u-bold u-text-shadow">
+                    {{country}}
+                  </h3>
+                {{/if}}
+                {{#if subtitle}}
+                  <p class="u-small u-text-shadow">
+                    <small>{{subtitle}}</small>
+                  </p>
+                {{/if}}
+                {{#if score}}
+                  <p class="score__pill u-h5 u-bold u-radius-med">
+                    {{score}}
+                  </p>
+                {{/if}}
+              </span>
+              {{#if image}}
+                <img class="u-figure__img" src="{{{image}}}" alt="" loading="lazy" />
+              {{/if}}
+            </figure>
+          </div>
+          <div class="l-row__col med-width-{{contentCol}} med-no-gutter">
+            <div class="score-card__content u-content u-text-body u-link-body">
+              {{{content}}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

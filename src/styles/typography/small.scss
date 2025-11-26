@@ -1,0 +1,6 @@
+@use '../settings' as *;
+
+.u-content small,
+.u-small {
+  @extend %f-small;
+}

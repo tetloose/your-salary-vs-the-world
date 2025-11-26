@@ -1,0 +1,19 @@
+@mixin color-scheme($light-scheme, $dark-scheme) {
+  @each $key, $value in $light-scheme {
+    #{$key}: #{$value};
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @each $key, $value in $dark-scheme {
+      #{$key}: #{$value};
+    }
+  }
+}
+
+@function color(
+  $light-color: $light,
+  $dark-color: $dark,
+  $percentage: 20%
+) {
+  @return color-mix(in oklab, $light-color, $dark-color $percentage);
+}

@@ -1,0 +1,134 @@
+@use 'sass:map';
+@use '../mixins/deep-get' as *;
+
+$variables: (
+  layout: (
+    columns: 12,
+    gutter: 4,
+    max-width: 1290px,
+    full-width: 1290px,
+    spacing: 4px,
+    header-height: 20
+  ),
+  breakpoints: (
+    sml: 420px,
+    med: 768px,
+    lrg: 1024px,
+    xlrg: 1280px,
+    xxlrg: 1520px
+  ),
+  transition: (
+    timing: (
+      slow: cubic-bezier(0, 0, .25, 1),
+      med: cubic-bezier(.25, .3, .25, 1),
+      fast: cubic-bezier(.25, .3, .25, 1),
+      ease: ease,
+      ease-in: ease-in,
+      ease-in-out: ease-in-out
+    ),
+    duration: (
+      slow: 500ms,
+      med: 400ms,
+      fast: 300ms
+    ),
+    delay: (
+      slow: 600ms,
+      med: 400ms,
+      fast: 200ms
+    )
+  ),
+  radius: (
+    tny: 2px,
+    sml: 4px,
+    med: 16px,
+    lrg: 20px,
+    xlrg: 24px,
+    round: 50%
+  ),
+  height: (
+    fullscreen: 100svh,
+    half: 50svh,
+    one-third: 33.3333svh,
+    two-third: 66.6666svh
+  ),
+  font-size: (
+    xxxxxlrg: 56px,
+    xxxxlrg: 40px,
+    xxxlrg: 32px,
+    xxlrg: 26px,
+    xlrg: 22px,
+    lrg: 18px,
+    med: 16px,
+    sml: 14px
+  ),
+  icon: (
+    xxxxxlrg: 56px,
+    xxxxlrg: 40px,
+    xxxlrg: 32px,
+    xxlrg: 26px,
+    xlrg: 22px,
+    lrg: 18px,
+    med: 16px,
+    sml: 14px
+  ),
+  z-index: (
+    hidden: -1,
+    zero: 0,
+    sml: 1,
+    med: 2,
+    lrg: 3,
+    xlrg: 4,
+    xxlrg: 5,
+    xxxlrg: 6
+  ),
+  viewport-width: (
+    breakpoint-min: med,
+    breakpoint-max: xxlrg,
+    adjustment-min: 2.7vw,
+    adjustment-max: 1.2vw
+  )
+);
+
+@function layout($key) {
+  @return deep-get($variables, layout, $key);
+}
+
+@function breakpoint($key) {
+  @return deep-get($variables, breakpoints, $key);
+}
+
+@function transition-timing($key) {
+  @return deep-get($variables, transition, timing, $key);
+}
+
+@function transition-duration($key) {
+  @return deep-get($variables, transition, duration, $key);
+}
+
+@function transition-delay($key) {
+  @return deep-get($variables, transition, delay, $key);
+}
+
+@function radius($key) {
+  @return deep-get($variables, radius, $key);
+}
+
+@function height($key) {
+  @return deep-get($variables, height, $key);
+}
+
+@function font-size($key) {
+  @return deep-get($variables, font-size, $key);
+}
+
+@function z-index($key) {
+  @return deep-get($variables, z-index, $key);
+}
+
+@function viewport-width($key) {
+  @return deep-get($variables, viewport-width, $key);
+}
+
+@function icon($key) {
+  @return deep-get($variables, icon, $key);
+}
