@@ -28,5 +28,7 @@ export const modules = {
   ContentImage: () =>
     import(
       /* webpackChunkName: 'content-image' */ '@components/Content-image/Content-image.component'
-    )
+    ),
+  Blog: () =>
+    import(/* webpackChunkName: 'blog' */ '@components/Blog/Blog.component')
 }

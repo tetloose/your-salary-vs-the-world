@@ -10,21 +10,16 @@
     justify-content: center;
     overflow: hidden;
     background-clip: padding-box;
-    border: 1px solid rgba($dark, .2);
-    box-shadow: 0 7px 7px 2px rgb(0 0 0 / 20%);
+    border: 1px solid rgba($dark, .1);
+    box-shadow: 0 4px 6px rgba($dark, .1);
 
     @include mq(breakpoint(med)) {
-      @include sizing('height', 250px);
+      @include sizing('min-height', 250px);
     }
 
     &.is-left {
       #{$score-card}__image {
         right: 0;
-      }
-
-      #{$score-card}__content {
-        @include sizing('padding-left', size(12));
-        @include sizing('padding-right', size(8));
       }
     }
 
@@ -35,11 +30,6 @@
 
       #{$score-card}__image {
         left: 0;
-      }
-
-      #{$score-card}__content {
-        @include sizing('padding-right', size(12));
-        @include sizing('padding-left', size(8));
       }
     }
   }
@@ -55,8 +45,7 @@
   }
 
   &__content {
-    @include sizing('padding-top', size(8));
-    @include sizing('padding-bottom', size(8));
+    @include sizing('padding', size(layout(gutter)));
   }
 
   &__figure {
@@ -66,25 +55,18 @@
 
 .score {
   display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
   flex-direction: column;
   position: absolute;
   z-index: z-index(sml);
   justify-content: flex-end;
-  color: $light;
 
   @include sizing('inset', size(5));
 
   &__num {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: inline-flex;
+    margin-bottom: auto;
     align-items: center;
     justify-content: center;
-    background-color: $blue-dark;
-    color: $light;
 
     @include sizing('width', 35px);
     @include sizing('height', 35px);
@@ -94,8 +76,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: $blue-dark;
-    color: $light;
 
     @include sizing('margin-top', size(2));
     @include sizing('padding', size(3));

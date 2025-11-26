@@ -1,0 +1,34 @@
+@use '@styles/settings' as *;
+
+.blog {
+  &__cards {
+    @include mq(breakpoint(med)) {
+      @include sizing('margin-top', -#{size(calc(layout(gutter) * 2))});
+    }
+
+    @include mq(breakpoint(med), max-width) {
+      @include sizing('margin-top', -#{size(layout(gutter))});
+    }
+  }
+
+  &__card {
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba($dark, .1);
+
+    @include mq(breakpoint(med)) {
+      @include sizing('margin-top', size(calc(layout(gutter) * 2)));
+    }
+
+    @include mq(breakpoint(med), max-width) {
+      @include sizing('margin-top', size(layout(gutter)));
+    }
+  }
+
+  &__content {
+    @include sizing('padding', size(8));
+  }
+
+  &__link {
+    margin-top: auto;
+  }
+}

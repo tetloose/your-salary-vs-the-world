@@ -1,0 +1,45 @@
+<section data-module="Blog" style="opacity: 0" class="blog u-load-hide {{containerModifiers}}">
+  {{#if content}}
+    <div class="l-row">
+      <div class="l-row__col">
+        <div class="u-content {{contentModifiers}}">
+          {{{content}}}
+        </div>
+      </div>
+    </div>
+  {{/if}}
+  {{#if posts}}
+    <div class="l-row blog__cards u-spacing-t-med">
+      {{#each posts}}
+        <div class="l-row__col med-width-6">
+          <article class="blog__card {{articleModifiers}}">
+            {{#if image}}
+              <figure class="u-figure {{imageModifiers}}">
+                <img class="u-figure__img" src="{{image}}" alt="{{alt}}" loading="lazy" />
+              </figure>
+            {{/if}}
+            <div class="blog__content {{contentModifiers}}">
+              {{#if title}}
+                <h3 class="u-h5 u-bold u-spacing-b-xsml">
+                  {{title}}
+                </h3>
+              {{/if}}
+              {{#if readMoreText}}
+                <a href="{{url}}" class="blog__link">
+                  {{readMoreText}}
+                </a>
+              {{/if}}
+            </div>
+          </article>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+  {{#if btnText}}
+    <div class="u-text-align-center u-spacing-t-med">
+      <a href="{{btnLink}}" class="u-btn-{{btnColor}}" rel="noreferrer" target="_blank">
+        {{btnText}}
+      </a>
+    </div>
+  {{/if}}
+</section>

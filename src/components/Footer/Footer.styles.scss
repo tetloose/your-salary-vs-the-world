@@ -1,9 +1,9 @@
 @use '@styles/settings' as *;
 
-.content-image {
-  &__content {
+.footer {
+  &__link {
     @include mq(breakpoint(med), max-width) {
-      @include sizing('padding-top', size(8));
+      @include sizing('padding-top', size(6));
     }
   }
 }

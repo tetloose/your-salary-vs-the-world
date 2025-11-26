@@ -1,0 +1,8 @@
+@use '../settings' as *;
+
+.mob-flush-container {
+  @include mq(breakpoint(med), max-width) {
+    @include sizing('margin-right', -#{size(layout(gutter))});
+    @include sizing('margin-left', -#{size(layout(gutter))});
+  }
+}

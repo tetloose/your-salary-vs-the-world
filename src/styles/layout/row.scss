@@ -74,11 +74,6 @@
     }
 
     @include mq(breakpoint(sml)) {
-      &.sml-no-gutter {
-        padding-right: 0;
-        padding-left: 0;
-      }
-
       @for $i from 1 through layout(columns) {
         &.sml-width-#{$i} {
           width: column-width(layout(columns), #{$i});
@@ -87,11 +82,6 @@
     }
 
     @include mq(breakpoint(med)) {
-      &.med-no-gutter {
-        padding-right: 0;
-        padding-left: 0;
-      }
-
       @for $i from 1 through layout(columns) {
         &.med-width-#{$i} {
           width: column-width(layout(columns), #{$i});
@@ -100,11 +90,6 @@
     }
 
     @include mq(breakpoint(lrg)) {
-      &.lrg-no-gutter {
-        padding-right: 0;
-        padding-left: 0;
-      }
-
       @for $i from 1 through layout(columns) {
         &.lrg-width-#{$i} {
           width: column-width(layout(columns), #{$i});
@@ -113,11 +98,6 @@
     }
 
     @include mq(breakpoint(xlrg)) {
-      &.xlrg-no-gutter {
-        padding-right: 0;
-        padding-left: 0;
-      }
-
       @for $i from 1 through layout(columns) {
         &.xlrg-width-#{$i} {
           width: column-width(layout(columns), #{$i});
@@ -126,11 +106,6 @@
     }
 
     @include mq(breakpoint(xxlrg)) {
-      &.xxlrg-no-gutter {
-        padding-right: 0;
-        padding-left: 0;
-      }
-
       @for $i from 1 through layout(columns) {
         &.xxlrg-width-#{$i} {
           width: column-width(layout(columns), #{$i});
@@ -145,5 +120,22 @@
 
     @include sizing('margin-right', -#{size(layout(gutter))});
     @include sizing('margin-left', -#{size(layout(gutter))});
+
+    &.no-margin {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    &.has-padding {
+      @include mq(breakpoint(med)) {
+        @include sizing('padding-right', size(calc(layout(gutter) * 2)));
+        @include sizing('padding-left', size(calc(layout(gutter) * 2)));
+      }
+
+      @include mq(breakpoint(med), max-width) {
+        @include sizing('padding-right', size(layout(gutter)));
+        @include sizing('padding-left', size(layout(gutter)));
+      }
+    }
   }
 }

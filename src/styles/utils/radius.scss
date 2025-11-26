@@ -23,3 +23,43 @@
 .u-radius-round {
   border-radius: radius(round);
 }
+
+.u-radius-tl-tr-br-tny {
+  border-radius: radius(tny) radius(tny) radius(tny) 0;
+}
+
+.u-radius-tl-tr-br-sml {
+  border-radius: radius(sml) radius(sml) radius(sml) 0;
+}
+
+.u-radius-tl-tr-br-med {
+  border-radius: radius(med) radius(med) radius(med) 0;
+}
+
+.u-radius-tl-tr-br-lrg {
+  border-radius: radius(lrg) radius(lrg) radius(lrg) 0;
+}
+
+.u-radius-tl-tr-br-xlrg {
+  border-radius: radius(xlrg) radius(xlrg) radius(xlrg) 0;
+}
+
+.u-radius-tr-br-bl-tny {
+  border-radius: 0 radius(tny) radius(tny);
+}
+
+.u-radius-tr-br-bl-sml {
+  border-radius: 0 radius(sml) radius(sml);
+}
+
+.u-radius-tr-br-bl-med {
+  border-radius: 0 radius(med) radius(med);
+}
+
+.u-radius-tr-br-bl-lrg {
+  border-radius: 0 radius(lrg) radius(lrg);
+}
+
+.u-radius-tr-br-bl-xlrg {
+  border-radius: 0 radius(xlrg) radius(xlrg);
+}

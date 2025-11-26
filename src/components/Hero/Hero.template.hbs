@@ -1,18 +1,14 @@
-<section
-  data-module="Hero"
-  style="opacity: 0"
-  class="hero u-load-hide u-bg-{{bg}} u-spacing-t-{{pt}} u-spacing-b-{{pb}}"
->
-  <div class="l-row direction-row-reverse align-center">
-    <div class="l-row__col med-width-6">
+<section data-module="Hero" style="opacity: 0" class="hero u-load-hide {{containerModifiers}}">
+  <div class="l-row {{rowModifiers}}">
+    <div class="l-row__col med-width-{{imageCol}}">
       {{#if image}}
-        <figure class="u-figure is-contain">
-          <img class="u-figure__img" src="{{image}}" alt="" loading="lazy" />
+        <figure class="u-figure {{imageModifiers}}">
+          <img class="u-figure__img" src="{{image}}" alt="{{imageAlt}}" loading="lazy" />
         </figure>
       {{/if}}
     </div>
-    <div class="l-row__col med-width-6">
-      <div class="hero__content u-text-{{color}}">
+    <div class="l-row__col med-width-{{contentCol}}">
+      <div class="hero__content {{contentModifiers}}">
         {{#if subtitle}}
           <div class="u-small u-uppercase u-bold">
             {{{subtitle}}}

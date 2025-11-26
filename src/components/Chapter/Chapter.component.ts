@@ -1,5 +1,4 @@
 import { ComponentClass } from '@utilities/component-class.utilities'
-import './Chapter.styles.scss'
 
 export class Chapter extends ComponentClass {
   scrollId?: string

@@ -1,4 +1,4 @@
-<section data-preload="true" data-module="Social" style="opacity: 0" class="social u-load-hide u-spacing-t-med">
+<section data-preload="true" data-module="Social" style="opacity: 0" class="social u-load-hide {{containerModifiers}}">
   <div class="l-row">
     <div class="l-row__col">
       <div class="social__inside">
@@ -51,7 +51,7 @@
             <ul class="toc__ul u-link u-link-body u-small no-underline u-spacing-t-xxsml">
               {{#each tocLinks}}
                 <li class="toc__li js-section js-{{id}}" data-scroll-to="{{id}}">
-                  <a href="{{href}}">{{text}}</a>
+                  <a href="{{href}}" rel="noreferrer">{{text}}</a>
                 </li>
               {{/each}}
             </ul>

@@ -8,13 +8,13 @@
 
   &__inside {
     @include mq(breakpoint(med), max-width) {
-      border-top: 1px solid rgba($dark, .2);
+      border-top: 1px solid rgba($dark, .1);
 
       @include sizing('padding-top', size(12));
     }
 
     @include mq(breakpoint(med)) {
-      border-right: 1px solid rgba($dark, .2);
+      border-right: 1px solid rgba($dark, .1);
 
       @include sizing('padding-top', size(2));
       @include sizing('padding-bottom', size(2));

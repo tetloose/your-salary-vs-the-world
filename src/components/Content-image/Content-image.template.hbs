@@ -1,18 +1,14 @@
-<section
-  data-module="ContentImage"
-  style="opacity: 0"
-  class="content-image u-load-hide u-bg-{{bg}} u-spacing-t-{{pt}} u-spacing-b-{{pb}}"
->
+<section data-module="ContentImage" style="opacity: 0" class="content-image u-load-hide {{containerModifiers}}">
   <div class="l-row {{rowModifiers}}">
-    <div class="l-row__col med-width-6">
+    <div class="l-row__col med-width-{{imageCol}}">
       {{#if image}}
-        <figure class="content-image__image u-figure {{figureModifiers}}">
+        <figure class="u-figure {{imageModifiers}}">
           <img class="u-figure__img" src="{{image}}" alt="{{imageAlt}}" loading="lazy" />
         </figure>
       {{/if}}
     </div>
-    <div class="l-row__col med-width-6">
-      <div class="content-image__content u-text-{{color}} u-link-{{link}}">
+    <div class="l-row__col med-width-{{contentCol}}">
+      <div class="content-image__content {{contentModifiers}}">
         {{#if subtitle}}
           <div class="u-small u-uppercase u-bold">
             {{{subtitle}}}
@@ -24,7 +20,7 @@
           </div>
         {{/if}}
         {{#if content}}
-          <div class="u-content u-spacing-t-sml">
+          <div class="u-content u-spacing-t-xsml">
             {{{content}}}
           </div>
         {{/if}}

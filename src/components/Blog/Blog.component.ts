@@ -1,7 +1,7 @@
 import { ComponentClass } from '@utilities/component-class.utilities'
-import './Footer.styles.scss'
+import './Blog.styles.scss'
 
-export class Footer extends ComponentClass {
+export class Blog extends ComponentClass {
   constructor(module: HTMLElement) {
     super(module)
 
@@ -9,4 +9,4 @@ export class Footer extends ComponentClass {
   }
 }
 
-export default (module: HTMLElement) => new Footer(module)
+export default (module: HTMLElement) => new Blog(module)

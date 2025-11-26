@@ -1,7 +1,6 @@
 @use 'sass:color';
 @use '../mixins/color' as *;
 
-// Base colors
 $dark: #000;
 $light: #fff;
 $blue-light: #6fa0af;
@@ -9,9 +8,7 @@ $blue-dark: #2c415a;
 $body: #19293a;
 $heading: #242620;
 $cream: #fbf8f2;
-
-// Hover colors
-$dark-hover: color($dark, $light, 10%);
+$dark-hover: color($dark, $light, 25%);
 $light-hover: color($light, $dark, 15%);
 $blue-light-hover: color($blue-light, $dark, 25%);
 $blue-dark-hover: color($blue-dark, $light, 20%);

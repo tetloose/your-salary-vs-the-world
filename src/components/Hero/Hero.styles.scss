@@ -2,7 +2,7 @@
 
 .hero {
   @include mq(breakpoint(med)) {
-    border-bottom: 1px solid rgba($dark, .2);
+    border-bottom: 1px solid rgba($dark, .1);
   }
 
   &__content {

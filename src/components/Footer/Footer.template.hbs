@@ -1,7 +1,21 @@
-<footer data-module="Footer" style="opacity: 0" class="u-load-hide">
-  Brought to you by
-  <img src="./images/remitly-logo.svg" alt="Remitly Logo" />
-  <a href="/" target="">
-    Home
-  </a>
+<footer data-module="Footer" style="opacity: 0" class="footer u-load-hide {{containerModifiers}}">
+  <div class="l-row {{rowModifiers}}">
+    {{#if content}}
+      <div class="l-row__col med-width-{{contentCol}}">
+        <div class="u-content">
+          {{{content}}}
+        </div>
+      </div>
+    {{/if}}
+    {{#if linkText}}
+      <div class="l-row__col med-width-{{linkCol}}">
+        <a href="{{linkUrl}}" class="footer__link u-bold" rel="noreferrer">
+          {{linkText}}
+          {{#if linkIcon}}
+            <i class="u-icon-{{linkIcon}}"></i>
+          {{/if}}
+        </a>
+      </div>
+    {{/if}}
+  </div>
 </footer>

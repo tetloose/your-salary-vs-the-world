@@ -1,32 +1,28 @@
-<section
-  data-module="ScoreCard"
-  style="opacity: 0"
-  class="score-card u-load-hide u-bg-{{bg}} u-spacing-t-{{pt}} u-spacing-b-{{pb}}"
->
-  <div class="l-row">
+<section data-module="ScoreCard" style="opacity: 0" class="score-card u-load-hide {{containerModifiers}}">
+  <div class="l-row {{rowModifiers}}">
     <div class="l-row__col">
-      <div class="score-card__inside u-bg-light is-{{alignment}} u-radius-xlrg">
-        <div class="score-card__row l-row">
-          <div class="score-card__image l-row__col med-width-{{imageCol}} med-no-gutter">
-            <figure class="score-card__figure u-figure is-cover u-overlay-{{overlay}}">
+      <div class="score-card__inside {{insideModifiers}}">
+        <div class="score-card__row l-row no-margin">
+          <div class="score-card__image l-row__col med-width-{{imageCol}} no-gutter">
+            <figure class="score-card__figure u-figure {{imageModifiers}}">
               <span class="score">
                 {{#if num}}
-                  <small class="score__num u-small u-bold u-radius-round">
+                  <small class="score__num u-small u-bold u-radius-round u-text-{{scoreNumColor}} u-bg-{{scoreNumBg}}">
                     {{num}}
                   </small>
                 {{/if}}
                 {{#if country}}
-                  <h3 class="u-h3 u-bold u-text-shadow">
+                  <h3 class="u-h3 u-bold u-text-shadow u-text-{{scoreColor}}">
                     {{country}}
                   </h3>
                 {{/if}}
                 {{#if subtitle}}
-                  <p class="u-small u-text-shadow">
+                  <p class="u-small u-text-shadow u-text-{{scoreColor}}">
                     <small>{{subtitle}}</small>
                   </p>
                 {{/if}}
                 {{#if score}}
-                  <p class="score__pill u-h5 u-bold u-radius-med">
+                  <p class="score__pill u-h5 u-bold u-radius-med u-text-{{scorePillColor}} u-bg-{{scorePillBg}}">
                     {{score}}
                   </p>
                 {{/if}}
@@ -36,8 +32,8 @@
               {{/if}}
             </figure>
           </div>
-          <div class="l-row__col med-width-{{contentCol}} med-no-gutter">
-            <div class="score-card__content u-content u-text-body u-link-body">
+          <div class="l-row__col med-width-{{contentCol}} no-gutter">
+            <div class="score-card__content u-content {{contentModifiers}}">
               {{{content}}}
             </div>
           </div>

@@ -1,7 +1,7 @@
 @use '@styles/settings' as *;
 
 .header {
-  border-bottom: 1px solid rgba($dark, .2);
+  border-bottom: 1px solid rgba($dark, .1);
 
   &__logo {
     @include sizing('max-width', 150px);

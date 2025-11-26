@@ -1,16 +1,22 @@
-<header
-  data-preload="true"
-  data-module="Header"
-  class="header u-load-hide u-bg-light u-spacing-t-xsml u-spacing-b-xsml"
-  style="opacity: 0"
->
-  <div class="l-row med-reversed">
-    <div class="l-row__col">
-      <a href="/" rel="noreferrer" class="header__logo">
-        <figure class="u-figure is-contain">
-          <img src="./images/logo.svg" alt="Remitly" width="150" height="36" class="u-figure__img" loading="lazy" />
-        </figure>
-      </a>
+<header data-preload="true" data-module="Header" class="header u-load-hide {{containerModifiers}}" style="opacity: 0">
+  {{#if image}}
+    <div class="l-row {{rowModifiers}}">
+      <div class="l-row__col">
+        {{#if url}}
+          <a href="{{url}}" rel="noreferrer" class="header__logo">
+            <figure class="u-figure {{imageModifiers}}">
+              <img
+                src="{{image}}"
+                alt="{{imageAlt}}"
+                width="{{imageWidth}}"
+                height="{{imageHeight}}"
+                class="u-figure__img"
+                loading="lazy"
+              />
+            </figure>
+          </a>
+        {{/if}}
+      </div>
     </div>
-  </div>
+  {{/if}}
 </header>

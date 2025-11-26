@@ -4,7 +4,7 @@
 $variables: (
   layout: (
     columns: 12,
-    gutter: 4,
+    gutter: 8,
     max-width: 1290px,
     full-width: 1290px,
     spacing: 4px,
@@ -84,8 +84,8 @@ $variables: (
   viewport-width: (
     breakpoint-min: med,
     breakpoint-max: xxlrg,
-    adjustment-min: 2.7vw,
-    adjustment-max: 1.2vw
+    adjustment-min: 3vw,
+    adjustment-max: 1vw
   )
 );
 

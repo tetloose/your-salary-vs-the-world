@@ -3,8 +3,8 @@
 
 @mixin transition(
   $property: 'color',
-  $duration: transition-duration(med),
-  $timing: transition-timing(med),
+  $duration: transition-duration(fast),
+  $timing: transition-timing(fast),
   $delay: null
 ) {
   @if $property {
