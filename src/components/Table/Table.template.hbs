@@ -1,20 +1,18 @@
-<section data-module="Table" style="opacity: 0" class="table-component u-load-hide {{containerModifiers}}">
+<section data-module="Table" style="opacity: 0" class="table u-load-hide {{containerModifiers}}">
   <div class="l-row {{rowModifiers}}">
     <div class="l-row__col">
-      <div class="table-wrapper">
-        <table class="table js-dataTable" id="dataTable">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Country</th>
-              <th>Average Annual Wage (USD)</th>
-              <th>Average Annual Hours</th>
-              <th>Estimated Hourly Rate (USD)</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
+      <table class="u-table js-dataTable" id="dataTable">
+        <thead>
+          <tr>
+            <th class="has-radius-t-l"><span>Rank</span></th>
+            <th>Country</th>
+            <th>Average Annual Wage</th>
+            <th>Average Annual Hours</th>
+            <th class="has-radius-t-r">Estimated Hourly Rate</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
   </div>
 </section>

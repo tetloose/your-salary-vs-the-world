@@ -8,7 +8,18 @@
 
   &::before,
   &::after {
-    content: '"';
-    display: inline;
+    font-style: normal;
+  }
+
+  &::before {
+    content: '\201C';
+    position: absolute;
+    left: -10px;
+  }
+
+  &::after {
+    content: '\201D';
+    position: relative;
+    right: 4px;
   }
 }

@@ -41,16 +41,7 @@ export class Table extends ComponentClass {
       columnDefs: [
         {
           targets: 0,
-          width: '80px',
-          className: 'dt-center'
-        },
-        {
-          targets: 1,
-          className: 'dt-left'
-        },
-        {
-          targets: [2, 3, 4],
-          className: 'dt-right'
+          className: 'is-rank u-text-align-center'
         }
       ],
       language: {

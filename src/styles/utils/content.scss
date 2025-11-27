@@ -30,10 +30,10 @@
 
   ul,
   ol {
-    @include sizing('padding-top', size(3));
+    @include sizing('padding-top', size(4.5));
 
     li {
-      @include sizing('padding-top', size(2));
+      @include sizing('padding-top', size(.5));
     }
   }
 
