@@ -1,0 +1,11 @@
+#!/bin/bash
+#deploy
+
+SSH=tetloose.com
+DIR=~/staging/Remitly
+LOCAL_DIR=~/Sites/Clients/Remitly/public
+
+ssh "$SSH" "rm -rf $DIR/public"
+eval rsync -r "$LOCAL_DIR" "$SSH":"$DIR" --stats --progress -raz --update
+
+echo "updated..."

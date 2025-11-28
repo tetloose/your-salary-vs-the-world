@@ -9,6 +9,7 @@
     "prepare": "husky",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
+    "deploy": "npm run build && bash toolkit deploy",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:fix": "npm run lint:js:fix && npm run lint:css:fix && npm run lint:html:fix",
     "lint:js": "eslint ./src",
