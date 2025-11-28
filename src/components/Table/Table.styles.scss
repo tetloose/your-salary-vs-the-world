@@ -1,4 +1,3 @@
-/* stylelint-disable selector-class-pattern */
 @use '@styles/settings' as *;
 
 .u-table {
@@ -212,6 +211,15 @@
 
     @include sizing('padding', size(2));
 
+    &.disabled {
+      display: none;
+    }
+
+    &.current {
+      @include disable(true);
+    }
+
+    &.current,
     &:focus {
       background-color: $body;
       color: $light;

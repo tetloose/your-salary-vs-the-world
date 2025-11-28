@@ -1,9 +1,9 @@
 #!/bin/bash
 #deploy
 
-SSH=tetloose.com
-DIR=~/staging/Remitly
-LOCAL_DIR=~/Sites/Clients/Remitly/public
+SSH=tetloose
+DIR=/homepages/28/d4299295230/htdocs/staging/Remitly
+LOCAL_DIR=~/Sites/Clients/Remitly/PatternLibrary/public
 
 ssh "$SSH" "rm -rf $DIR/public"
 eval rsync -r "$LOCAL_DIR" "$SSH":"$DIR" --stats --progress -raz --update
