@@ -8,9 +8,6 @@
   border-top-left-radius: radius(med);
   border-top-right-radius: radius(med);
 
-  @include sizing('margin-top', size(4));
-  @include sizing('margin-bottom', size(4));
-
   &::after {
     content: '';
     display: table;
@@ -92,6 +89,9 @@
 .dt-layout-full {
   width: 100%;
   overflow-x: auto;
+
+  @include sizing('margin-top', size(4));
+  @include sizing('margin-bottom', size(4));
 }
 
 .dt-column-header {
@@ -132,9 +132,17 @@
 
 .dt-layout-row {
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: flex-start;
+
+  @include mq(breakpoint(med)) {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  @include mq(breakpoint(med), max-width) {
+    flex-direction: column;
+
+    @include sizing('gap', size(2));
+  }
 }
 
 .dt-length {
@@ -155,7 +163,9 @@
 }
 
 .dt-layout-end {
-  margin-left: auto;
+  @include mq(breakpoint(med)) {
+    margin-left: auto;
+  }
 }
 
 .dt-search {
@@ -170,6 +180,7 @@
   }
 
   input {
+    width: 100%;
     border: 1px solid rgba($dark, .2);
 
     @include sizing('padding', [size(2), size(4)]);
@@ -179,16 +190,22 @@
 
 .dt-info {
   @extend %f-small;
+
+  @include mq(breakpoint(med), max-width) {
+    text-align: center;
+  }
 }
 
 .dt-paging nav {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
 
   @include sizing('gap', size(1));
   @extend %f-small;
   @extend %f-body-bold;
+
+  @include mq(breakpoint(med), max-width) {
+    justify-content: center;
+  }
 
   button {
     border: 1px solid rgba($dark, .2);

@@ -12,6 +12,10 @@
 
   @include sizing('max-width', layout(max-width));
 
+  &.no-wrap {
+    flex-wrap: nowrap;
+  }
+
   &.full-width {
     width: 100%;
   }

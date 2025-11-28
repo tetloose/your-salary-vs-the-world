@@ -1,0 +1,8 @@
+@use '@styles/settings' as *;
+
+.sidebar {
+  position: sticky;
+  border-right: 1px solid rgba($blue-dark, .1);
+
+  @include sizing('top', size(12));
+}

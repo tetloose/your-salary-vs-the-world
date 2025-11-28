@@ -1,4 +1,10 @@
-<section id={{id}} data-module="Faq" style="opacity: 0" class="faq u-load-hide {{containerModifiers}}">
+<section
+  id="{{id}}"
+  data-scroll-id="{{id}}"
+  data-module="Faq"
+  style="opacity: 0"
+  class="faq u-load-hide {{containerModifiers}}"
+>
   <div class="l-row {{rowModifiers}}">
     <div class="l-row__col">
       {{#if title}}
@@ -15,11 +21,23 @@
         <div class="faq__wrapper u-spacing-t-med">
           {{#each items}}
             <div class="faq__item js-faqItem {{itemModifiers}}">
-              <button class="faq__trigger js-faqItemTrigger {{triggerModifiers}}" type="button">
+              <button
+                id="faq-button-{{labelBy}}"
+                class="faq__trigger js-faqItemTrigger {{triggerModifiers}}"
+                type="button"
+                aria-expanded="false"
+                aria-controls="faq-content-{{labelBy}}"
+              >
                 {{question}}
-                <i class="faq__icon u-icon-chevron-down is-xxlrg js-faqItemTrigger"></i>
+                <i class="faq__icon u-icon-chevron-down is-xxlrg js-faqItemTrigger" aria-hidden="true"></i>
               </button>
-              <div class="faq__content u-content {{contentModifiers}} js-faqItemContent">
+              <div
+                id="faq-content-{{labelBy}}"
+                class="faq__content u-content {{contentModifiers}} js-faqItemContent"
+                role="region"
+                aria-labelledby="faq-button-{{labelBy}}"
+                aria-hidden="true"
+              >
                 <div class="faq__answer">
                   {{{answer}}}
                 </div>

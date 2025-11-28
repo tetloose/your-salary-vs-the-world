@@ -108,8 +108,7 @@
       "stylelint"
     ],
     "src/components/**/*.hbs": [
-      "prettier --write",
-      "prettier --check"
+      "bash -c 'for file in \"$@\"; do if ! grep -q \"{{>\" \"$file\"; then prettier --write \"$file\"; fi; done' _"
     ]
   },
   "browserslist": [

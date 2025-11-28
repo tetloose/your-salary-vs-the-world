@@ -1,63 +1,41 @@
-<section data-preload="true" data-module="Social" style="opacity: 0" class="social u-load-hide {{containerModifiers}}">
-  <div class="l-row">
-    <div class="l-row__col">
-      <div class="social__inside">
-        {{#if shareTitle}}
-          <h3 class="u-p u-bold u-uppercase">
-            {{shareTitle}}
-          </h3>
-        {{/if}}
-        <div class="share u-spacing-t-xxsml">
-          <a
-            href="#"
-            class="share__link u-icon-x is-link is-body is-xxlrg js-socialLink"
-            data-platform="x"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Share on X"
-          ></a>
-          <a
-            href="#"
-            class="share__link u-icon-linkedin is-link is-body is-xxlrg js-socialLink"
-            data-platform="linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Share on LinkedIn"
-          ></a>
-          <a
-            href="#"
-            class="share__link u-icon-facebook is-link is-body is-xxlrg js-socialLink"
-            data-platform="facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Share on Facebook"
-          ></a>
-          <a
-            href="#"
-            class="share__link u-icon-reddit is-link is-body is-xxlrg js-socialLink"
-            data-platform="reddit"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Share on Reddit"
-          ></a>
-        </div>
-        <div class="toc u-spacing-t-sml">
-          {{#if tocTitle}}
-            <h3 class="u-p u-bold u-uppercase">
-              {{tocTitle}}
-            </h3>
-          {{/if}}
-          {{#if tocLinks}}
-            <ul class="toc__ul u-link u-link-body u-small no-underline u-spacing-t-xxsml">
-              {{#each tocLinks}}
-                <li class="toc__li js-section js-{{id}}" data-scroll-to="{{id}}">
-                  <a href="{{href}}" rel="noreferrer">{{text}}</a>
-                </li>
-              {{/each}}
-            </ul>
-          {{/if}}
-        </div>
-      </div>
-    </div>
+<div data-module="Social" style="opacity: 0" class="social u-load-hide {{containerModifiers}}">
+  {{#if shareTitle}}
+    <h3 class="u-p u-bold u-uppercase">
+      {{shareTitle}}
+    </h3>
+  {{/if}}
+  <div class="social__links u-spacing-t-xxsml">
+    <a
+      href="#"
+      class="u-icon-x is-link is-body is-xxlrg js-socialLink"
+      data-platform="x"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Share on X"
+    ></a>
+    <a
+      href="#"
+      class="u-icon-linkedin is-link is-body is-xxlrg js-socialLink"
+      data-platform="linkedin"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Share on LinkedIn"
+    ></a>
+    <a
+      href="#"
+      class="u-icon-facebook is-link is-body is-xxlrg js-socialLink"
+      data-platform="facebook"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Share on Facebook"
+    ></a>
+    <a
+      href="#"
+      class="u-icon-reddit is-link is-body is-xxlrg js-socialLink"
+      data-platform="reddit"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Share on Reddit"
+    ></a>
   </div>
-</section>
+</div>

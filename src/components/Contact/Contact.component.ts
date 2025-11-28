@@ -5,6 +5,7 @@ export class Contact extends ComponentClass {
   constructor(module: HTMLElement) {
     super(module)
 
+    this.initObserver()
     this.load()
   }
 }

@@ -2,9 +2,12 @@ import { settings } from '@config/settings.config'
 
 export class ComponentClass {
   module: HTMLElement
+  scrollId?: string
+  observer?: IntersectionObserver
 
   constructor(module: HTMLElement) {
     this.module = module
+    this.scrollId = module.dataset.scrollId ?? ''
   }
 
   load() {
@@ -45,5 +48,36 @@ export class ComponentClass {
     if (!rendered) return
 
     this.module = rendered
+  }
+
+  initObserver() {
+    const { module, scrollId } = this
+
+    if (!scrollId) return
+
+    const options: IntersectionObserverInit = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0
+    }
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const navItems = document.querySelectorAll('.js-section')
+
+          navItems.forEach((item) => item.classList.remove('is-active'))
+
+          const matchingNavItems = document.querySelectorAll(
+            `.js-section[data-scroll-to="${scrollId}"]`
+          )
+          matchingNavItems.forEach((item) => {
+            item.classList.add('is-active')
+          })
+        }
+      })
+    }, options)
+
+    this.observer.observe(module)
   }
 }

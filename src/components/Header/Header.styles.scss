@@ -1,6 +1,23 @@
 @use '@styles/settings' as *;
 
 .header {
+  @include mq(breakpoint(med), max-width) {
+    position: relative;
+    z-index: z-index(xxxlrg);
+
+    @include sizing('min-height', layout(header-height));
+  }
+
+  &__inside {
+    @include mq(breakpoint(med), max-width) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid rgba($body, .1);
+    }
+  }
+
   &__logo {
     @include sizing('max-width', 150px);
 
@@ -17,6 +34,98 @@
         opacity: .8;
         outline-width: 0;
       }
+    }
+  }
+
+  &__trigger {
+    $trigger: &;
+
+    position: relative;
+    z-index: z-index(sml);
+
+    @include sizing('height', 40px);
+    @include sizing('width', 50px);
+
+    &-bar {
+      position: absolute;
+      right: 0;
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+      background-color: $blue-dark;
+
+      @include sizing('height', size(2));
+      @include transition('all');
+      @include hardware(true);
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-child(4) {
+        bottom: 0;
+      }
+    }
+
+    &.is-active {
+      #{$trigger}-bar {
+        &:nth-child(1) {
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+
+        &:nth-child(4) {
+          bottom: 50%;
+          transform: translateY(-50%) rotate(45deg);
+        }
+
+        &:nth-child(1),
+        &:nth-child(4) {
+          opacity: 0;
+        }
+
+        &:nth-child(2) {
+          transform: translateY(-50%) rotate(-45deg);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-50%) rotate(45deg);
+        }
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: z-index(med);
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 4px 6px rgba($body, .1);
+    transform: translateX(-100%);
+
+    @include transition('all');
+    @include hardware(true);
+    @include sizing('padding', size(layout(gutter)));
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    .social {
+      margin-top: auto;
     }
   }
 }

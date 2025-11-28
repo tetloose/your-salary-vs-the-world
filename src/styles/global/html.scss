@@ -7,7 +7,6 @@ html {
   color: $body;
   line-height: 1.6;
   text-rendering: optimizespeed;
-  scroll-behavior: smooth;
 
   @include font-smoothing;
   @include selection;
@@ -18,12 +17,11 @@ html {
   @extend %f-body;
   @extend %f-body-regular;
 
-  &.no-scroll {
-    position: relative;
-    overflow: hidden;
+  @include mq(breakpoint(med)) {
+    scroll-behavior: smooth;
+  }
 
-    body {
-      overflow: hidden;
-    }
+  @include mq(breakpoint(med), max-width) {
+    @include sizing('scroll-padding-top', layout(header-height));
   }
 }

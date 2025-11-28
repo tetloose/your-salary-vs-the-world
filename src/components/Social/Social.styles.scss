@@ -1,50 +1,12 @@
 @use '@styles/settings' as *;
 
 .social {
-  @include mq(breakpoint(med)) {
-    position: sticky;
-    top: 0;
-  }
+  &__links {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
 
-  &__inside {
-    @include mq(breakpoint(med), max-width) {
-      border-top: 1px solid rgba($blue-dark, .1);
-
-      @include sizing('padding-top', size(12));
-    }
-
-    @include mq(breakpoint(med)) {
-      border-right: 1px solid rgba($blue-dark, .1);
-    }
-  }
-}
-
-.share {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: flex-start;
-
-  @include sizing('gap', size(4));
-}
-
-.toc {
-  @include mq(breakpoint(med), max-width) {
-    display: none;
-  }
-
-  &__ul {
-    display: flex;
-    flex-direction: column;
-
-    @include sizing('gap', size(1));
-
-    list-style-type: none;
-  }
-
-  &__li {
-    &.is-active > a {
-      text-decoration: underline;
-    }
+    @include sizing('gap', size(4));
   }
 }

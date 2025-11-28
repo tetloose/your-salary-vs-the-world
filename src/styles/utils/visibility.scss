@@ -1,0 +1,17 @@
+@use '../settings' as *;
+
+.u-hide-from-med,
+.l-row .u-hide-from-med {
+  @include mq(breakpoint(med), max-width) {
+    display: none;
+  }
+}
+
+.u-show-from-med,
+.l-row .u-show-from-med {
+  display: none;
+
+  @include mq(breakpoint(med), max-width) {
+    display: block;
+  }
+}

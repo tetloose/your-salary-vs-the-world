@@ -5,21 +5,21 @@
 
   &__item {
     &.is-dark {
-      border-bottom: 1px solid rgba($dark, .1);
+      border-bottom: 1px solid rgba($body, .1);
 
       &:first-child {
-        border-top: 1px solid rgba($dark, .1);
+        border-top: 1px solid rgba($body, .1);
       }
 
       #{$faq}__trigger {
         &:focus {
-          background-color: rgba($dark, .03);
+          background-color: rgba($body, .03);
         }
 
         @include mq-hover {
           &:hover,
           &:active {
-            background-color: rgba($dark, .03);
+            background-color: rgba($body, .03);
           }
         }
       }
@@ -57,7 +57,7 @@
       }
 
       &.is-dark #{$faq}__trigger {
-        background-color: rgba($dark, .02);
+        background-color: rgba($body, .02);
       }
 
       &.is-light #{$faq}__trigger {
@@ -77,7 +77,7 @@
     cursor: pointer;
     appearance: none;
 
-    @include sizing('padding', size(6));
+    @include sizing('padding', [size(6), size(0)]);
     @include transition('background-color');
   }
 

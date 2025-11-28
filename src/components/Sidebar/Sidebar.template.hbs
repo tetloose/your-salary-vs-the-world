@@ -1,0 +1,16 @@
+<div data-preload="true" data-module="Sidebar" style="opacity: 0" class="sidebar u-load-hide {{containerModifiers}}">
+  {{> Social/Social.template
+    containerModifiers=''
+    shareTitle='Share this article'
+  }}
+  {{> Toc/Toc.template
+    containerModifiers='u-spacing-t-sml'
+    tocTitle='Table of contents'
+    tocLinks=(array
+      (hash id='key' href='#key' text='Key findings')
+      (hash id='chapter-1' href='#chapter-1' text='Chapter 1')
+      (hash id='chapter-2' href='#chapter-2' text='Chapter 2')
+      (hash id='faq' href='#faq' text='FAQs')
+    )
+  }}
+</div>

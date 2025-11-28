@@ -40,5 +40,11 @@ export const modules = {
   Quote: () =>
     import(/* webpackChunkName: 'quote' */ '@components/Quote/Quote.component'),
   Table: () =>
-    import(/* webpackChunkName: 'table' */ '@components/Table/Table.component')
+    import(/* webpackChunkName: 'table' */ '@components/Table/Table.component'),
+  Sidebar: () =>
+    import(
+      /* webpackChunkName: 'sidebar' */ '@components/Sidebar/Sidebar.component'
+    ),
+  Toc: () =>
+    import(/* webpackChunkName: 'toc' */ '@components/Toc/Toc.component')
 }

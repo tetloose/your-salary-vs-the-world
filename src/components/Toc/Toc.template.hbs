@@ -1,0 +1,16 @@
+<div data-preload="true" data-module="Toc" style="opacity: 0" class="toc u-load-hide {{containerModifiers}}">
+  {{#if tocTitle}}
+    <h3 class="u-p u-bold u-uppercase">
+      {{tocTitle}}
+    </h3>
+  {{/if}}
+  {{#if tocLinks}}
+    <ul class="toc__ul u-link u-link-body u-small no-underline u-spacing-t-xxsml">
+      {{#each tocLinks}}
+        <li class="toc__li js-section js-{{id}}" data-scroll-to="{{id}}">
+          <a href="{{href}}" rel="noreferrer">{{text}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</div>

@@ -5,6 +5,7 @@ export class Quote extends ComponentClass {
   constructor(module: HTMLElement) {
     super(module)
 
+    this.initObserver()
     this.load()
   }
 }

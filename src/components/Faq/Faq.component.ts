@@ -15,6 +15,7 @@ export class Faq extends ComponentClass {
 
     module.addEventListener('click', (e) => this.handleClick(e))
 
+    this.initObserver()
     this.load()
   }
 
@@ -30,13 +31,18 @@ export class Faq extends ComponentClass {
       const item = target.parentElement as HTMLElement
       const content = target.nextElementSibling as HTMLElement
 
-      if (item.classList.contains('is-visible')) this.hide(item, content)
-
-      this.show(item, content)
+      if (item.classList.contains('is-visible')) {
+        this.hide(item, content)
+      } else {
+        this.show(item, content)
+      }
     }
   }
 
   show(item: HTMLElement, content: HTMLElement) {
+    item.querySelector('button').setAttribute('aria-expanded', 'true')
+    content.setAttribute('aria-hidden', 'false')
+
     const getHeight = () => {
       content.style.display = 'block'
 
@@ -59,6 +65,8 @@ export class Faq extends ComponentClass {
   }
 
   hide(item: HTMLElement, content: HTMLElement) {
+    item.querySelector('button').setAttribute('aria-expanded', 'false')
+    content.setAttribute('aria-hidden', 'true')
     content.style.height = content.scrollHeight + 'px'
 
     setTimeout(() => {

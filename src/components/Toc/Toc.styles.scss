@@ -1,0 +1,18 @@
+@use '@styles/settings' as *;
+
+.toc {
+  &__ul {
+    display: flex;
+    flex-direction: column;
+
+    @include sizing('gap', size(1));
+
+    list-style-type: none;
+  }
+
+  &__li {
+    &.is-active > a {
+      text-decoration: underline;
+    }
+  }
+}

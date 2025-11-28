@@ -1,22 +1,53 @@
-<header data-preload="true" data-module="Header" class="header u-load-hide {{containerModifiers}}" style="opacity: 0">
-  {{#if image}}
-    <div class="l-row {{rowModifiers}}">
-      <div class="l-row__col">
-        {{#if url}}
-          <a href="{{url}}" rel="noreferrer" class="header__logo">
-            <figure class="u-figure {{imageModifiers}}">
-              <img
-                src="{{image}}"
-                alt="{{imageAlt}}"
-                width="{{imageWidth}}"
-                height="{{imageHeight}}"
-                class="u-figure__img"
-                loading="lazy"
-              />
-            </figure>
-          </a>
-        {{/if}}
+{{#if image}}
+  {{#if url}}
+    <header data-preload="true" data-module="Header" class="header u-load-hide u-bg-light" style="opacity: 0;">
+      <div class="header__inside u-bg-light u-spacing-t-xsml u-spacing-b-xsml">
+        <div class="l-row {{rowModifiers}} align-center justify-flex-end no-wrap">
+          <div class="l-row__col">
+            <a href="{{url}}" rel="noreferrer" class="header__logo">
+              <figure class="u-figure is-contain">
+                <img
+                  src="{{image}}"
+                  alt="{{imageAlt}}"
+                  width="{{imageWidth}}"
+                  height="{{imageHeight}}"
+                  class="u-figure__img"
+                  loading="lazy"
+                />
+              </figure>
+            </a>
+          </div>
+          <div class="l-row__col width-auto u-show-from-med">
+            <button
+              class="header__trigger js-headerTrigger"
+              aria-expanded="false"
+              aria-label="Show Table of Contents"
+              aria-controls="faq-content-menu"
+            >
+              <span class="header__trigger-bar" aria-hidden="true"></span>
+              <span class="header__trigger-bar" aria-hidden="true"></span>
+              <span class="header__trigger-bar" aria-hidden="true"></span>
+              <span class="header__trigger-bar" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="header__menu u-bg-light u-show-from-med js-headerMenu" role="region" aria-labelledby="faq-button-menu" aria-hidden="true">
+        {{> Toc/Toc.template
+          containerModifiers=''
+          tocTitle='Table of contents'
+          tocLinks=(array
+            (hash id='key' href='#key' text='Key findings')
+            (hash id='chapter-1' href='#chapter-1' text='Chapter 1')
+            (hash id='chapter-2' href='#chapter-2' text='Chapter 2')
+            (hash id='faq' href='#faq' text='FAQs')
+          )
+        }}
+        {{> Social/Social.template
+          containerModifiers='u-spacing-t-sml'
+          shareTitle='Share'
+        }}
+      </div>
+    </header>
   {{/if}}
-</header>
+{{/if}}

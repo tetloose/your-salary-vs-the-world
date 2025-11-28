@@ -1,12 +1,12 @@
 import { ComponentClass } from '@utilities/component-class.utilities'
+import './Sidebar.styles.scss'
 
-export class Content extends ComponentClass {
+export class Sidebar extends ComponentClass {
   constructor(module: HTMLElement) {
     super(module)
 
-    this.initObserver()
     this.load()
   }
 }
 
-export default (module: HTMLElement) => new Content(module)
+export default (module: HTMLElement) => new Sidebar(module)
